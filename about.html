@@ -86,19 +86,42 @@
 
 
     <!-- Vision Section -->
-    <section class="py-24 px-6 max-w-4xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-bold mb-8" id="visionTitle">Our Vision</h1>
-        <p class="text-xl text-slate-600 leading-relaxed" id="visionText">We believe that learning is the foundation of growth. Pharos exists to make adaptive, human-centered learning accessible to every organization that wants to invest in their people.</p>
-    </section>
+ <!-- Vision -->
+<section class="py-28 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
 
-    <!-- Mission Section -->
-    <section class="py-24 px-6 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold mb-8 text-blue-600" id="missionTitle">Our Mission</h2>
-            <p class="text-lg text-slate-600 leading-relaxed mb-6" id="missionText">To deliver learning experiences that are intelligent, human-led, and measurably effective.</p>
-            <p class="text-lg font-semibold text-purple-600" id="missionTagline">Built for modern learning, not legacy LMS.</p>
-        </div>
-    </section>
+    <div class="fade-up">
+        <h1 class="text-6xl md:text-7xl font-black tracking-tight mb-4">Our Vision</h1>
+        <div class="h-1 w-24 bg-blue-600 rounded-full mb-8"></div>
+    </div>
+
+    <p class="text-xl text-slate-600 leading-relaxed fade-up delay-2">
+        We believe that learning is the foundation of growth. Pharos exists to make adaptive, human-centered learning accessible to every organization that wants to invest in their people.
+    </p>
+
+</section>
+
+<!-- Mission -->
+<section class="py-28 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+
+    <div class="fade-up">
+        <h2 class="text-5xl md:text-6xl font-bold tracking-tight text-blue-600 mb-4">
+            Our Mission
+        </h2>
+        <div class="h-1 w-24 bg-purple-600 rounded-full mb-8"></div>
+    </div>
+
+    <div class="fade-up delay-2">
+        <p class="text-xl text-slate-700 leading-relaxed mb-6">
+            To deliver learning experiences that are intelligent, human-led, and measurably effective.
+        </p>
+
+        <p class="text-xl font-semibold text-purple-600">
+            Built for modern learning, not legacy LMS.
+        </p>
+    </div>
+
+</section>
+
 
     <!-- Footer -->
    <footer class="py-12 px-6 bg-white text-black mt-20">
@@ -124,11 +147,20 @@
 
 
     <script>
-        gsap.from('#visionTitle', { opacity: 0, y: 30, duration: 0.8, delay: 0.2 });
-        gsap.from('#visionText', { opacity: 0, y: 20, duration: 0.8, delay: 0.4 });
-        gsap.from('#missionTitle', { opacity: 0, y: 30, duration: 0.8, delay: 0.6 });
-        gsap.from('#missionText', { opacity: 0, y: 20, duration: 0.8, delay: 0.8 });
-        gsap.from('#missionTagline', { opacity: 0, y: 20, duration: 0.8, delay: 1.0 });
+        document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".fade-up");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+});
+
     </script>
     <script src="./assets/js/mobile-menu.js"></script>
 
