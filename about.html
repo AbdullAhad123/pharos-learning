@@ -29,21 +29,61 @@
           box-shadow: 0 12px 24px rgba(0, 102, 255, 0.3);
         }
     </style>
+        <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-white text-slate-900">
     <!-- Header -->
-    <header class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-slate-200 z-50">
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold gradient-text">Pharos</a>
-            <div class="hidden md:flex gap-8 items-center">
-                <a href="products.html" class="hover:text-blue-600 transition font-medium">Product</a>
-                <a href="solutions.html" class="hover:text-blue-600 transition font-medium">Solutions</a>
-                <a href="about.html" class="hover:text-blue-600 transition font-semibold">About</a>
-                <a href="contact.html" class="hover:text-blue-600 transition font-medium">Contact</a>
-                <a href="contact.html" class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Book a Demo</a>
+  <header class="top-0 bg-white/90 backdrop-blur-xl z-50">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <!-- LEFT LOGO -->
+        <a href="index.html" class="text-2xl font-bold tracking-tight">Pharos Learning</a>
+
+        <!-- CENTER CAPSULE MENU (desktop only) -->
+        <div class="hidden md:flex items-center justify-center">
+            <div class="bg-slate-100 px-6 py-3 rounded-2xl shadow-sm flex gap-8 text-sm font-medium tracking-wide">
+                <a href="products.html" class="hover:text-blue-600">PRODUCT</a>
+                <a href="solutions.html" class="hover:text-blue-600">SOLUTIONS</a>
+                <a href="about.html" class="hover:text-blue-600">ABOUT</a>
+                <a href="contact.html" class="hover:text-blue-600">CONTACT</a>
             </div>
-        </nav>
-    </header>
+        </div>
+
+        <!-- RIGHT DESKTOP CTA -->
+        <div class="hidden md:flex items-center gap-6">
+            <a href="contact.html" class="bg-black text-white text-sm px-5 py-2 rounded-lg tracking-wide shadow hover:bg-slate-900">
+                BOOK A DEMO
+            </a>
+        </div>
+
+        <!-- MOBILE MENU ICON -->
+        <div class="md:hidden">
+            <button id="mobileMenuBtn">
+                <img src="assets/img/menu.svg" class="w-8 h-8" alt="menu">
+            </button>
+        </div>
+
+    </nav>
+</header>
+<!-- Mobile Menu Overlay -->
+<div id="mobileMenuOverlay" class="fixed inset-0 bg-white z-[999] hidden opacity-0 transition-all duration-300">
+    <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl font-semibold tracking-wide">
+        <a href="products.html" class="hover:text-blue-600">PRODUCT</a>
+        <a href="solutions.html" class="hover:text-blue-600">SOLUTIONS</a>
+        <a href="about.html" class="hover:text-blue-600">ABOUT</a>
+        <a href="contact.html" class="hover:text-blue-600">CONTACT</a>
+
+        <a href="contact.html" class="mt-6 bg-black text-white px-6 py-3 rounded-lg shadow hover:bg-slate-900">
+            BOOK A DEMO
+        </a>
+
+        <!-- Close Button -->
+        <button id="closeMenuBtn" class="absolute top-6 right-6 text-slate-700">
+            ✕
+        </button>
+    </div>
+</div>
+
 
     <!-- Vision Section -->
     <section class="py-24 px-6 max-w-4xl mx-auto">
