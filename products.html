@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - Pharos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .accent-gold { color: #D4AF37; }
+        .hover-lift { transition: all 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        a { text-decoration: none; color: inherit; }
+    </style>
+</head>
+<body class="bg-white text-black">
+    <!-- Header -->
+    <header class="sticky top-0 bg-white border-b border-gray-200 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="text-2xl font-bold">Pharos</a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="/products.html" class="hover:accent-gold transition font-semibold">Product</a>
+                <a href="/solutions.html" class="hover:accent-gold transition">Solutions</a>
+                <a href="/about.html" class="hover:accent-gold transition">About</a>
+                <a href="/contact.html" class="hover:accent-gold transition">Contact</a>
+                <a href="/contact.html" class="bg-black text-white px-6 py-2 rounded hover-lift">Book a Demo</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="py-16 md:py-24 px-6 max-w-6xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">Product Overview</h1>
+        <h2 class="text-2xl md:text-3xl text-gray-600 mb-12">Pharos is the Adaptive Learning OS for modern teams.</h2>
+    </section>
+
+    <!-- Workflow Diagram -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-wrap md:flex-nowrap justify-between items-center gap-4 text-center md:text-left">
+                <div>
+                    <p class="text-lg font-bold">Watch</p>
+                    <p class="text-gray-600 text-sm">Structured video</p>
+                </div>
+                <div class="text-2xl accent-gold hidden md:block">→</div>
+                <div>
+                    <p class="text-lg font-bold">Practice</p>
+                    <p class="text-gray-600 text-sm">Interactive quizzes</p>
+                </div>
+                <div class="text-2xl accent-gold hidden md:block">→</div>
+                <div>
+                    <p class="text-lg font-bold">Adapt</p>
+                    <p class="text-gray-600 text-sm">AI personalization</p>
+                </div>
+                <div class="text-2xl accent-gold hidden md:block">→</div>
+                <div>
+                    <p class="text-lg font-bold">Measure</p>
+                    <p class="text-gray-600 text-sm">Analytics & insights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features -->
+    <section class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16">Core Features</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="border border-gray-200 p-8 rounded-lg">
+                <h3 class="font-bold text-lg mb-2 accent-gold">AI Quizzes</h3>
+                <p class="text-gray-600">Intelligent, adaptive assessments that adjust to learner level.</p>
+            </div>
+            <div class="border border-gray-200 p-8 rounded-lg">
+                <h3 class="font-bold text-lg mb-2 accent-gold">Concept Maps</h3>
+                <p class="text-gray-600">Visual knowledge structures that show how ideas connect.</p>
+            </div>
+            <div class="border border-gray-200 p-8 rounded-lg">
+                <h3 class="font-bold text-lg mb-2 accent-gold">Human Video Courses</h3>
+                <p class="text-gray-600">Expert-led instruction, structured and on-demand.</p>
+            </div>
+            <div class="border border-gray-200 p-8 rounded-lg">
+                <h3 class="font-bold text-lg mb-2 accent-gold">Manager Analytics</h3>
+                <p class="text-gray-600">Track team progress, engagement, and learning outcomes.</p>
+            </div>
+            <div class="border border-gray-200 p-8 rounded-lg">
+                <h3 class="font-bold text-lg mb-2 accent-gold">Seat-Based Access</h3>
+                <p class="text-gray-600">Flexible licensing for growing teams.</p>
+            </div>
+            <div class="border border-gray-200 p-8 rounded-lg">
+                <h3 class="font-bold text-lg mb-2 accent-gold">Gamification Optional</h3>
+                <p class="text-gray-600">Keep learning professional or add badges & rewards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-6 mt-20">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-bold">Pharos</div>
+            <div class="flex gap-8 text-sm">
+                <a href="/products.html" class="hover:accent-gold transition">Product</a>
+                <a href="/solutions.html" class="hover:accent-gold transition">Solutions</a>
+                <a href="/about.html" class="hover:accent-gold transition">About</a>
+                <a href="/contact.html" class="hover:accent-gold transition">Contact</a>
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="#" class="hover:accent-gold transition">Privacy</a>
+                <a href="#" class="hover:accent-gold transition">Terms</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

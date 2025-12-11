@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Pharos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .accent-gold { color: #D4AF37; }
+        .hover-lift { transition: all 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        a { text-decoration: none; color: inherit; }
+        input, textarea { transition: border-color 0.3s; }
+        input:focus, textarea:focus { outline: none; border-color: #D4AF37; }
+    </style>
+</head>
+<body class="bg-white text-black">
+    <!-- Header -->
+    <header class="sticky top-0 bg-white border-b border-gray-200 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="text-2xl font-bold">Pharos</a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="/products.html" class="hover:accent-gold transition">Product</a>
+                <a href="/solutions.html" class="hover:accent-gold transition">Solutions</a>
+                <a href="/about.html" class="hover:accent-gold transition">About</a>
+                <a href="/contact.html" class="hover:accent-gold transition font-semibold">Contact</a>
+                <a href="/contact.html" class="bg-black text-white px-6 py-2 rounded hover-lift">Book a Demo</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Form -->
+    <section class="py-24 px-6 max-w-2xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">Request Demo</h1>
+        <p class="text-lg text-gray-600 mb-12">We'll be in touch within 24 hours to schedule your personalized walkthrough.</p>
+
+        <form class="space-y-6" id="contactForm">
+            <div>
+                <label class="block font-semibold mb-2">Full Name</label>
+                <input type="text" placeholder="Your name" class="w-full border border-gray-300 px-4 py-3 rounded" required>
+            </div>
+            <div>
+                <label class="block font-semibold mb-2">Work Email</label>
+                <input type="email" placeholder="you@company.com" class="w-full border border-gray-300 px-4 py-3 rounded" required>
+            </div>
+            <div>
+                <label class="block font-semibold mb-2">Company Name</label>
+                <input type="text" placeholder="Your company" class="w-full border border-gray-300 px-4 py-3 rounded" required>
+            </div>
+            <div>
+                <label class="block font-semibold mb-2">Role</label>
+                <input type="text" placeholder="Your role" class="w-full border border-gray-300 px-4 py-3 rounded" required>
+            </div>
+            <button type="submit" class="w-full bg-black text-white py-4 rounded font-semibold hover-lift">Request Demo</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-6 mt-20">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-bold">Pharos</div>
+            <div class="flex gap-8 text-sm">
+                <a href="/products.html" class="hover:accent-gold transition">Product</a>
+                <a href="/solutions.html" class="hover:accent-gold transition">Solutions</a>
+                <a href="/about.html" class="hover:accent-gold transition">About</a>
+                <a href="/contact.html" class="hover:accent-gold transition">Contact</a>
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="#" class="hover:accent-gold transition">Privacy</a>
+                <a href="#" class="hover:accent-gold transition">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! We will contact you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

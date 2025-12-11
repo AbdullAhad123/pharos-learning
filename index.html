@@ -1,23 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-    <link rel="stylesheet" href="assets/css/font.css">
-    <link rel="stylesheet" href="assets/css/all.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharos - Adaptive Learning Reimagined</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .accent-gold { color: #D4AF37; }
+        .bg-accent-gold { background-color: #D4AF37; }
+        .hover-lift { transition: all 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        a { text-decoration: none; color: inherit; }
+    </style>
 </head>
-<body>
-    
-    <div id="content">
-        
-    </div>
+<body class="bg-white text-black">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 bg-white border-b border-gray-200 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="text-2xl font-bold">Pharos</a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="/products.html" class="hover:accent-gold transition">Product</a>
+                <a href="/solutions.html" class="hover:accent-gold transition">Solutions</a>
+                <a href="/about.html" class="hover:accent-gold transition">About</a>
+                <a href="/contact.html" class="hover:accent-gold transition">Contact</a>
+                <a href="/contact.html" class="bg-black text-white px-6 py-2 rounded hover-lift">Book a Demo</a>
+            </div>
+            <!-- Mobile menu button would go here -->
+        </nav>
+    </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Hero Section -->
+    <section class="py-20 md:py-32 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Adaptive learning reimagined — for organizations that demand more.</h1>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">Human-led courses. AI-powered paths. Results you can measure.</p>
+                <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                    <a href="/contact.html" class="bg-black text-white px-8 py-3 rounded font-semibold hover-lift">Book a Demo</a>
+                    <a href="#" class="accent-gold font-semibold">Watch 2-min overview →</a>
+                </div>
+            </div>
+            <div class="bg-gray-100 h-96 rounded-lg flex items-center justify-center border-2 border-gray-300">
+                <p class="text-gray-400">Product mockup (static image)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">How it Works</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-4 accent-gold">Watch</h3>
+                    <p class="text-gray-600 leading-relaxed">Human-led video lessons, structured and on-demand.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-4 accent-gold">Learn</h3>
+                    <p class="text-gray-600 leading-relaxed">AI-powered quizzes, explanations, adaptive paths.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-4 accent-gold">Grow</h3>
+                    <p class="text-gray-600 leading-relaxed">Manager analytics, completion insights, measurable learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Pharos -->
+    <section class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12">Why Pharos</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="flex gap-4">
+                <div class="accent-gold text-2xl">•</div>
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Adaptive by default</h3>
+                    <p class="text-gray-600">Every learner gets a unique path based on their needs and progress.</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <div class="accent-gold text-2xl">•</div>
+                <div>
+                    <h3 class="font-bold text-lg mb-2">AI + human-led learning</h3>
+                    <p class="text-gray-600">The best of both worlds: expert instruction with intelligent personalization.</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <div class="accent-gold text-2xl">•</div>
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Enterprise-ready & secure</h3>
+                    <p class="text-gray-600">Built for organizations with the highest compliance and security standards.</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <div class="accent-gold text-2xl">•</div>
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Engagement optional</h3>
+                    <p class="text-gray-600">Gamification toggle lets you keep learning professional and focused.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product UI Strip -->
+    <section class="py-20 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Product in Action</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-200 h-64 rounded-lg flex items-center justify-center border border-gray-300">
+                    <p class="text-gray-500">Video player</p>
+                </div>
+                <div class="bg-gray-200 h-64 rounded-lg flex items-center justify-center border border-gray-300">
+                    <p class="text-gray-500">AI quiz interface</p>
+                </div>
+                <div class="bg-gray-200 h-64 rounded-lg flex items-center justify-center border border-gray-300">
+                    <p class="text-gray-500">Concept map</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 px-6 max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-8">Ready to turn training into a competitive advantage?</h2>
+        <a href="/contact.html" class="bg-black text-white px-8 py-4 rounded font-semibold inline-block hover-lift">Book a Demo</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-6 mt-20">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-bold">Pharos</div>
+            <div class="flex gap-8 text-sm">
+                <a href="/products.html" class="hover:accent-gold transition">Product</a>
+                <a href="/solutions.html" class="hover:accent-gold transition">Solutions</a>
+                <a href="/about.html" class="hover:accent-gold transition">About</a>
+                <a href="/contact.html" class="hover:accent-gold transition">Contact</a>
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="#" class="hover:accent-gold transition">Privacy</a>
+                <a href="#" class="hover:accent-gold transition">Terms</a>
+            </div>
+        </div>
+    </footer>
 </body>
-
 </html>
