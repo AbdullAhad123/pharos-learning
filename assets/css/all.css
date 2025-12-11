@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --light: #fffffff6;
+    --white: #ffffff;
+    --dark: #000000f6;
+    --black: #000000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* default  */
+.wrapper {
+    max-width: 1380px !important;
+    margin: auto !important;
+}
+
+/* text  */
+
+.text_light {
+    color: var(--light) !important;
+}
+
+.text_dark {
+    color: var(--dark) !important;
+}
