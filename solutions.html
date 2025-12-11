@@ -5,75 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solutions - Pharos</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/font.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+       
         .accent-gold { color: #D4AF37; }
         .hover-lift { transition: all 0.3s ease; }
         .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         a { text-decoration: none; color: inherit; }
+        
+        .gradient-text {
+          background: linear-gradient(135deg, #0066FF 0%, #7C3AED 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        
+        .btn-primary {
+          background: linear-gradient(135deg, #0066FF 0%, #7C3AED 100%);
+          transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 12px 24px rgba(0, 102, 255, 0.3);
+        }
+        
+        .solution-card {
+          border: 2px solid rgba(0, 102, 255, 0.15);
+          background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+          transition: all 0.3s ease;
+        }
+        
+        .solution-card:hover {
+          border-color: rgba(0, 102, 255, 0.3);
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0, 102, 255, 0.15);
+        }
     </style>
 </head>
-<body class="bg-white text-black">
+<body class="bg-white text-slate-900">
     <!-- Header -->
-    <header class="sticky top-0 bg-white border-b border-gray-200 z-50">
+    <header class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-slate-200 z-50">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="/" class="text-2xl font-bold">Pharos</a>
+            <a href="index.html" class="text-2xl font-bold gradient-text">Pharos</a>
             <div class="hidden md:flex gap-8 items-center">
-                <a href="/products.html" class="hover:accent-gold transition">Product</a>
-                <a href="/solutions.html" class="hover:accent-gold transition font-semibold">Solutions</a>
-                <a href="/about.html" class="hover:accent-gold transition">About</a>
-                <a href="/contact.html" class="hover:accent-gold transition">Contact</a>
-                <a href="/contact.html" class="bg-black text-white px-6 py-2 rounded hover-lift">Book a Demo</a>
+                <a href="products.html" class="hover:text-blue-600 transition font-medium">Product</a>
+                <a href="solutions.html" class="hover:text-blue-600 transition font-semibold">Solutions</a>
+                <a href="about.html" class="hover:text-blue-600 transition font-medium">About</a>
+                <a href="contact.html" class="hover:text-blue-600 transition font-medium">Contact</a>
+                <a href="contact.html" class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Book a Demo</a>
             </div>
         </nav>
     </header>
 
     <!-- Hero -->
     <section class="py-16 md:py-24 px-6 max-w-6xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4">Solutions</h1>
-        <p class="text-xl text-gray-600">Pharos adapts to your organization's unique learning needs.</p>
+        <h1 class="text-5xl md:text-6xl font-bold mb-4" id="solutionsH1">Solutions</h1>
+        <p class="text-xl text-slate-600" id="solutionsDesc">Pharos adapts to your organization's unique learning needs.</p>
     </section>
 
     <!-- Solutions Cards -->
     <section class="py-20 px-6 max-w-6xl mx-auto">
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="border-2 border-gray-300 p-12 rounded-lg hover-lift">
-                <h3 class="text-2xl font-bold mb-3 accent-gold">HR & People Ops</h3>
-                <p class="text-gray-600 leading-relaxed">Onboarding, upskilling, retention.</p>
+            <div class="solution-card p-12 rounded-2xl" id="solution1">
+                <div class="w-14 h-14 bg-blue-600 rounded-lg mb-6 flex items-center justify-center text-white font-bold text-xl">HR</div>
+                <h3 class="text-2xl font-bold mb-3 text-blue-600">HR & People Ops</h3>
+                <p class="text-slate-600 leading-relaxed">Onboarding, upskilling, retention.</p>
             </div>
-            <div class="border-2 border-gray-300 p-12 rounded-lg hover-lift">
-                <h3 class="text-2xl font-bold mb-3 accent-gold">Team Leaders</h3>
-                <p class="text-gray-600 leading-relaxed">Clear metrics, adaptive paths, engagement.</p>
+            <div class="solution-card p-12 rounded-2xl" id="solution2">
+                <div class="w-14 h-14 bg-purple-600 rounded-lg mb-6 flex items-center justify-center text-white font-bold text-xl">TL</div>
+                <h3 class="text-2xl font-bold mb-3 text-purple-600">Team Leaders</h3>
+                <p class="text-slate-600 leading-relaxed">Clear metrics, adaptive paths, engagement.</p>
             </div>
-            <div class="border-2 border-gray-300 p-12 rounded-lg hover-lift">
-                <h3 class="text-2xl font-bold mb-3 accent-gold">Training Providers</h3>
-                <p class="text-gray-600 leading-relaxed">Deliver modern learning instead of static modules.</p>
+            <div class="solution-card p-12 rounded-2xl" id="solution3">
+                <div class="w-14 h-14 bg-blue-600 rounded-lg mb-6 flex items-center justify-center text-white font-bold text-xl">TP</div>
+                <h3 class="text-2xl font-bold mb-3 text-blue-600">Training Providers</h3>
+                <p class="text-slate-600 leading-relaxed">Deliver modern learning instead of static modules.</p>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
     <section class="py-16 px-6 text-center max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-8">See how Pharos fits your organization.</h2>
-        <a href="/contact.html" class="bg-black text-white px-8 py-4 rounded font-semibold inline-block hover-lift">Book a Demo</a>
+        <h2 class="text-3xl font-bold mb-8" id="solutionsCTA">See how Pharos fits your organization.</h2>
+        <a href="contact.html" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold inline-block">Book a Demo</a>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-12 px-6 mt-20">
+    <footer class="bg-slate-900 text-white py-12 px-6 mt-20">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-2xl font-bold">Pharos</div>
+            <div class="text-2xl font-bold gradient-text">Pharos</div>
             <div class="flex gap-8 text-sm">
-                <a href="/products.html" class="hover:accent-gold transition">Product</a>
-                <a href="/solutions.html" class="hover:accent-gold transition">Solutions</a>
-                <a href="/about.html" class="hover:accent-gold transition">About</a>
-                <a href="/contact.html" class="hover:accent-gold transition">Contact</a>
+                <a href="products.html" class="hover:text-blue-400 transition">Product</a>
+                <a href="solutions.html" class="hover:text-blue-400 transition">Solutions</a>
+                <a href="about.html" class="hover:text-blue-400 transition">About</a>
+                <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
             </div>
             <div class="flex gap-6 text-sm">
-                <a href="#" class="hover:accent-gold transition">Privacy</a>
-                <a href="#" class="hover:accent-gold transition">Terms</a>
+                <a href="#" class="hover:text-blue-400 transition">Privacy</a>
+                <a href="#" class="hover:text-blue-400 transition">Terms</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        
+        gsap.from('#solutionsH1', { opacity: 0, y: 30, duration: 0.8, delay: 0.2 });
+        gsap.from('#solutionsDesc', { opacity: 0, y: 20, duration: 0.8, delay: 0.4 });
+        
+       
+        
+        gsap.from('#solutionsCTA', {
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          scrollTrigger: { trigger: '#solutionsCTA', start: 'top 85%', toggleActions: 'play none none none' }
+        });
+    </script>
 </body>
 </html>

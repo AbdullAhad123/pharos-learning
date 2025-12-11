@@ -5,58 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Pharos</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/font.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-        .accent-gold { color: #D4AF37; }
+       
         a { text-decoration: none; color: inherit; }
+        
+        .gradient-text {
+          background: linear-gradient(135deg, #0066FF 0%, #7C3AED 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        
+        .btn-primary {
+          background: linear-gradient(135deg, #0066FF 0%, #7C3AED 100%);
+          transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 12px 24px rgba(0, 102, 255, 0.3);
+        }
     </style>
 </head>
-<body class="bg-white text-black">
+<body class="bg-white text-slate-900">
     <!-- Header -->
-    <header class="sticky top-0 bg-white border-b border-gray-200 z-50">
+    <header class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-slate-200 z-50">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="/" class="text-2xl font-bold">Pharos</a>
+            <a href="index.html" class="text-2xl font-bold gradient-text">Pharos</a>
             <div class="hidden md:flex gap-8 items-center">
-                <a href="/products.html" class="hover:accent-gold transition">Product</a>
-                <a href="/solutions.html" class="hover:accent-gold transition">Solutions</a>
-                <a href="/about.html" class="hover:accent-gold transition font-semibold">About</a>
-                <a href="/contact.html" class="hover:accent-gold transition">Contact</a>
-                <a href="/contact.html" class="bg-black text-white px-6 py-2 rounded">Book a Demo</a>
+                <a href="products.html" class="hover:text-blue-600 transition font-medium">Product</a>
+                <a href="solutions.html" class="hover:text-blue-600 transition font-medium">Solutions</a>
+                <a href="about.html" class="hover:text-blue-600 transition font-semibold">About</a>
+                <a href="contact.html" class="hover:text-blue-600 transition font-medium">Contact</a>
+                <a href="contact.html" class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Book a Demo</a>
             </div>
         </nav>
     </header>
 
     <!-- Vision Section -->
     <section class="py-24 px-6 max-w-4xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-bold mb-8">Our Vision</h1>
-        <p class="text-xl text-gray-600 leading-relaxed">We believe that learning is the foundation of growth. Pharos exists to make adaptive, human-centered learning accessible to every organization that wants to invest in their people.</p>
+        <h1 class="text-5xl md:text-6xl font-bold mb-8" id="visionTitle">Our Vision</h1>
+        <p class="text-xl text-slate-600 leading-relaxed" id="visionText">We believe that learning is the foundation of growth. Pharos exists to make adaptive, human-centered learning accessible to every organization that wants to invest in their people.</p>
     </section>
 
     <!-- Mission Section -->
-    <section class="py-24 px-6 bg-gray-50">
+    <section class="py-24 px-6 bg-gradient-to-br from-blue-50 to-purple-50">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold mb-8 accent-gold">Our Mission</h2>
-            <p class="text-lg text-gray-600 leading-relaxed mb-6">To deliver learning experiences that are intelligent, human-led, and measurably effective.</p>
-            <p class="text-lg font-semibold accent-gold">Built for modern learning, not legacy LMS.</p>
+            <h2 class="text-4xl font-bold mb-8 text-blue-600" id="missionTitle">Our Mission</h2>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6" id="missionText">To deliver learning experiences that are intelligent, human-led, and measurably effective.</p>
+            <p class="text-lg font-semibold text-purple-600" id="missionTagline">Built for modern learning, not legacy LMS.</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-12 px-6 mt-20">
+    <footer class="bg-slate-900 text-white py-12 px-6 mt-20">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-2xl font-bold">Pharos</div>
+            <div class="text-2xl font-bold gradient-text">Pharos</div>
             <div class="flex gap-8 text-sm">
-                <a href="/products.html" class="hover:accent-gold transition">Product</a>
-                <a href="/solutions.html" class="hover:accent-gold transition">Solutions</a>
-                <a href="/about.html" class="hover:accent-gold transition">About</a>
-                <a href="/contact.html" class="hover:accent-gold transition">Contact</a>
+                <a href="products.html" class="hover:text-blue-400 transition">Product</a>
+                <a href="solutions.html" class="hover:text-blue-400 transition">Solutions</a>
+                <a href="about.html" class="hover:text-blue-400 transition">About</a>
+                <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
             </div>
             <div class="flex gap-6 text-sm">
-                <a href="#" class="hover:accent-gold transition">Privacy</a>
-                <a href="#" class="hover:accent-gold transition">Terms</a>
+                <a href="#" class="hover:text-blue-400 transition">Privacy</a>
+                <a href="#" class="hover:text-blue-400 transition">Terms</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        gsap.from('#visionTitle', { opacity: 0, y: 30, duration: 0.8, delay: 0.2 });
+        gsap.from('#visionText', { opacity: 0, y: 20, duration: 0.8, delay: 0.4 });
+        gsap.from('#missionTitle', { opacity: 0, y: 30, duration: 0.8, delay: 0.6 });
+        gsap.from('#missionText', { opacity: 0, y: 20, duration: 0.8, delay: 0.8 });
+        gsap.from('#missionTagline', { opacity: 0, y: 20, duration: 0.8, delay: 1.0 });
+    </script>
 </body>
 </html>

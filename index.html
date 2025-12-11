@@ -5,29 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pharos - Adaptive Learning Reimagined</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/font.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-        .accent-gold { color: #D4AF37; }
-        .bg-accent-gold { background-color: #D4AF37; }
-        .hover-lift { transition: all 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        body { overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
+        
+        .gradient-text {
+          background: linear-gradient(135deg, #0066FF 0%, #7C3AED 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        
+        .btn-primary {
+          background: linear-gradient(135deg, #0066FF 0%, #7C3AED 100%);
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .btn-primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 12px 24px rgba(0, 102, 255, 0.3);
+        }
+        
+        .feature-card {
+          border: 1px solid rgba(0, 102, 255, 0.1);
+          background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+          transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+          border-color: rgba(0, 102, 255, 0.3);
+          transform: translateY(-4px);
+          box-shadow: 0 12px 24px rgba(0, 102, 255, 0.15);
+        }
+        
+        .float-element {
+          animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
     </style>
 </head>
-<body class="bg-white text-black">
+<body class="bg-gradient-to-b from-white via-blue-50/30 to-white text-slate-900">
     <!-- Header/Navigation -->
-    <header class="sticky top-0 bg-white border-b border-gray-200 z-50">
+    <header class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-slate-200 z-50">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="/" class="text-2xl font-bold">Pharos</a>
+            <a href="index.html" class="text-2xl font-bold gradient-text">Pharos</a>
             <div class="hidden md:flex gap-8 items-center">
-                <a href="/products.html" class="hover:accent-gold transition">Product</a>
-                <a href="/solutions.html" class="hover:accent-gold transition">Solutions</a>
-                <a href="/about.html" class="hover:accent-gold transition">About</a>
-                <a href="/contact.html" class="hover:accent-gold transition">Contact</a>
-                <a href="/contact.html" class="bg-black text-white px-6 py-2 rounded hover-lift">Book a Demo</a>
+                <a href="products.html" class="hover:text-blue-600 transition font-medium">Product</a>
+                <a href="solutions.html" class="hover:text-blue-600 transition font-medium">Solutions</a>
+                <a href="about.html" class="hover:text-blue-600 transition font-medium">About</a>
+                <a href="contact.html" class="hover:text-blue-600 transition font-medium">Contact</a>
+                <a href="contact.html" class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Book a Demo</a>
             </div>
-            <!-- Mobile menu button would go here -->
         </nav>
     </header>
 
@@ -35,35 +73,38 @@
     <section class="py-20 md:py-32 px-6 max-w-6xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Adaptive learning reimagined — for organizations that demand more.</h1>
-                <p class="text-xl text-gray-600 mb-8 leading-relaxed">Human-led courses. AI-powered paths. Results you can measure.</p>
-                <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                    <a href="/contact.html" class="bg-black text-white px-8 py-3 rounded font-semibold hover-lift">Book a Demo</a>
-                    <a href="#" class="accent-gold font-semibold">Watch 2-min overview →</a>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight" id="heroTitle">Adaptive learning reimagined — for organizations that demand more.</h1>
+                <p class="text-xl text-slate-600 mb-8 leading-relaxed" id="heroSubtitle">Human-led courses. AI-powered paths. Results you can measure.</p>
+                <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center" id="heroCTA">
+                    <a href="contact.html" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold">Book a Demo</a>
+                    <a href="#" class="text-blue-600 font-semibold hover:text-blue-700">Watch 2-min overview →</a>
                 </div>
             </div>
-            <div class="bg-gray-100 h-96 rounded-lg flex items-center justify-center border-2 border-gray-300">
-                <p class="text-gray-400">Product mockup (static image)</p>
+            <div class="bg-gradient-to-br from-blue-100 to-purple-100 h-96 rounded-2xl flex items-center justify-center border-2 border-blue-200 float-element">
+                <p class="text-slate-500 font-medium">Product mockup</p>
             </div>
         </div>
     </section>
 
     <!-- How It Works -->
-    <section class="py-20 px-6 bg-gray-50">
+    <section class="py-20 px-6 bg-slate-50">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16">How it Works</h2>
+            <h2 class="text-4xl font-bold text-center mb-16" id="howTitle">How it Works</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg border border-gray-200">
-                    <h3 class="text-2xl font-bold mb-4 accent-gold">Watch</h3>
-                    <p class="text-gray-600 leading-relaxed">Human-led video lessons, structured and on-demand.</p>
+                <div class="feature-card p-8 rounded-xl" id="feature1">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg mb-4 flex items-center justify-center text-white font-bold">1</div>
+                    <h3 class="text-2xl font-bold mb-4">Watch</h3>
+                    <p class="text-slate-600 leading-relaxed">Human-led video lessons, structured and on-demand.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg border border-gray-200">
-                    <h3 class="text-2xl font-bold mb-4 accent-gold">Learn</h3>
-                    <p class="text-gray-600 leading-relaxed">AI-powered quizzes, explanations, adaptive paths.</p>
+                <div class="feature-card p-8 rounded-xl" id="feature2">
+                    <div class="w-12 h-12 bg-purple-600 rounded-lg mb-4 flex items-center justify-center text-white font-bold">2</div>
+                    <h3 class="text-2xl font-bold mb-4">Learn</h3>
+                    <p class="text-slate-600 leading-relaxed">AI-powered quizzes, explanations, adaptive paths.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg border border-gray-200">
-                    <h3 class="text-2xl font-bold mb-4 accent-gold">Grow</h3>
-                    <p class="text-gray-600 leading-relaxed">Manager analytics, completion insights, measurable learning.</p>
+                <div class="feature-card p-8 rounded-xl" id="feature3">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg mb-4 flex items-center justify-center text-white font-bold">3</div>
+                    <h3 class="text-2xl font-bold mb-4">Grow</h3>
+                    <p class="text-slate-600 leading-relaxed">Manager analytics, completion insights, measurable learning.</p>
                 </div>
             </div>
         </div>
@@ -71,52 +112,52 @@
 
     <!-- Why Pharos -->
     <section class="py-20 px-6 max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12">Why Pharos</h2>
+        <h2 class="text-4xl font-bold mb-12" id="whyTitle">Why Pharos</h2>
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="flex gap-4">
-                <div class="accent-gold text-2xl">•</div>
+            <div class="flex gap-4" id="why1">
+                <div class="text-3xl font-bold text-blue-600 flex-shrink-0">•</div>
                 <div>
                     <h3 class="font-bold text-lg mb-2">Adaptive by default</h3>
-                    <p class="text-gray-600">Every learner gets a unique path based on their needs and progress.</p>
+                    <p class="text-slate-600">Every learner gets a unique path based on their needs and progress.</p>
                 </div>
             </div>
-            <div class="flex gap-4">
-                <div class="accent-gold text-2xl">•</div>
+            <div class="flex gap-4" id="why2">
+                <div class="text-3xl font-bold text-purple-600 flex-shrink-0">•</div>
                 <div>
                     <h3 class="font-bold text-lg mb-2">AI + human-led learning</h3>
-                    <p class="text-gray-600">The best of both worlds: expert instruction with intelligent personalization.</p>
+                    <p class="text-slate-600">The best of both worlds: expert instruction with intelligent personalization.</p>
                 </div>
             </div>
-            <div class="flex gap-4">
-                <div class="accent-gold text-2xl">•</div>
+            <div class="flex gap-4" id="why3">
+                <div class="text-3xl font-bold text-blue-600 flex-shrink-0">•</div>
                 <div>
                     <h3 class="font-bold text-lg mb-2">Enterprise-ready & secure</h3>
-                    <p class="text-gray-600">Built for organizations with the highest compliance and security standards.</p>
+                    <p class="text-slate-600">Built for organizations with the highest compliance and security standards.</p>
                 </div>
             </div>
-            <div class="flex gap-4">
-                <div class="accent-gold text-2xl">•</div>
+            <div class="flex gap-4" id="why4">
+                <div class="text-3xl font-bold text-purple-600 flex-shrink-0">•</div>
                 <div>
                     <h3 class="font-bold text-lg mb-2">Engagement optional</h3>
-                    <p class="text-gray-600">Gamification toggle lets you keep learning professional and focused.</p>
+                    <p class="text-slate-600">Gamification toggle lets you keep learning professional and focused.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Product UI Strip -->
-    <section class="py-20 px-6 bg-gray-50">
+    <section class="py-20 px-6 bg-slate-50">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16">Product in Action</h2>
+            <h2 class="text-4xl font-bold text-center mb-16" id="productTitle">Product in Action</h2>
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-gray-200 h-64 rounded-lg flex items-center justify-center border border-gray-300">
-                    <p class="text-gray-500">Video player</p>
+                <div class="bg-gradient-to-br from-blue-200 to-blue-100 h-72 rounded-2xl flex items-center justify-center border-2 border-blue-300" id="screenshot1">
+                    <p class="text-slate-600 font-medium">Video player</p>
                 </div>
-                <div class="bg-gray-200 h-64 rounded-lg flex items-center justify-center border border-gray-300">
-                    <p class="text-gray-500">AI quiz interface</p>
+                <div class="bg-gradient-to-br from-purple-200 to-purple-100 h-72 rounded-2xl flex items-center justify-center border-2 border-purple-300" id="screenshot2">
+                    <p class="text-slate-600 font-medium">AI quiz interface</p>
                 </div>
-                <div class="bg-gray-200 h-64 rounded-lg flex items-center justify-center border border-gray-300">
-                    <p class="text-gray-500">Concept map</p>
+                <div class="bg-gradient-to-br from-blue-200 to-purple-100 h-72 rounded-2xl flex items-center justify-center border-2 border-blue-300" id="screenshot3">
+                    <p class="text-slate-600 font-medium">Concept map</p>
                 </div>
             </div>
         </div>
@@ -124,25 +165,85 @@
 
     <!-- Final CTA -->
     <section class="py-20 px-6 max-w-6xl mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-8">Ready to turn training into a competitive advantage?</h2>
-        <a href="/contact.html" class="bg-black text-white px-8 py-4 rounded font-semibold inline-block hover-lift">Book a Demo</a>
+        <h2 class="text-4xl font-bold mb-8" id="ctaTitle">Ready to turn training into a competitive advantage?</h2>
+        <a href="contact.html" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold inline-block">Book a Demo</a>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-12 px-6 mt-20">
+    <footer class="bg-slate-900 text-white py-12 px-6 mt-20">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-2xl font-bold">Pharos</div>
+            <div class="text-2xl font-bold gradient-text">Pharos</div>
             <div class="flex gap-8 text-sm">
-                <a href="/products.html" class="hover:accent-gold transition">Product</a>
-                <a href="/solutions.html" class="hover:accent-gold transition">Solutions</a>
-                <a href="/about.html" class="hover:accent-gold transition">About</a>
-                <a href="/contact.html" class="hover:accent-gold transition">Contact</a>
+                <a href="products.html" class="hover:text-blue-400 transition">Product</a>
+                <a href="solutions.html" class="hover:text-blue-400 transition">Solutions</a>
+                <a href="about.html" class="hover:text-blue-400 transition">About</a>
+                <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
             </div>
             <div class="flex gap-6 text-sm">
-                <a href="#" class="hover:accent-gold transition">Privacy</a>
-                <a href="#" class="hover:accent-gold transition">Terms</a>
+                <a href="#" class="hover:text-blue-400 transition">Privacy</a>
+                <a href="#" class="hover:text-blue-400 transition">Terms</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Hero animations
+        gsap.from('#heroTitle', { opacity: 0, y: 30, duration: 0.8, delay: 0.2 });
+        gsap.from('#heroSubtitle', { opacity: 0, y: 20, duration: 0.8, delay: 0.4 });
+        gsap.from('#heroCTA', { opacity: 0, y: 20, duration: 0.8, delay: 0.6 });
+        
+        // How it Works stagger
+        gsap.from('#feature1, #feature2, #feature3', {
+          opacity: 0,
+          y: 40,
+          duration: 0.8,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: '#howTitle',
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        });
+        
+        // Why Pharos stagger
+        gsap.from('#why1, #why2, #why3, #why4', {
+          opacity: 0,
+          x: -40,
+          duration: 0.8,
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: '#whyTitle',
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        });
+        
+        // Screenshots scale on scroll
+        gsap.from('#screenshot1, #screenshot2, #screenshot3', {
+          opacity: 0,
+          scale: 0.9,
+          duration: 0.8,
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: '#productTitle',
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        });
+        
+        // CTA animation
+        gsap.from('#ctaTitle', {
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: '#ctaTitle',
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        });
+    </script>
 </body>
 </html>
