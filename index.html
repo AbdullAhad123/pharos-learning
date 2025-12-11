@@ -194,19 +194,7 @@
         gsap.from('#heroSubtitle', { opacity: 0, y: 20, duration: 0.8, delay: 0.4 });
         gsap.from('#heroCTA', { opacity: 0, y: 20, duration: 0.8, delay: 0.6 });
         
-        // How it Works stagger
-        gsap.from('#feature1, #feature2, #feature3', {
-          opacity: 0,
-          y: 40,
-          duration: 0.8,
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: '#howTitle',
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          }
-        });
-        
+     
         // Why Pharos stagger
         gsap.from('#why1, #why2, #why3, #why4', {
           opacity: 0,
