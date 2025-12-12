@@ -124,35 +124,253 @@
     </section>
 
     <!-- Core Features -->
-    <section class="py-20 px-6 max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-16" id="featuresTitle">Core Features</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="feature-box p-8 rounded-xl" id="feat1">
-                <h3 class="font-bold text-lg mb-2 text-blue-600">AI Quizzes</h3>
-                <p class="text-slate-600">Intelligent, adaptive assessments that adjust to learner level.</p>
+<section class="py-20 px-6 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold mb-16" id="featuresTitle">Core Features</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- CARD 1 -->
+        <div class="relative h-64 rounded-2xl overflow-hidden bg-slate-900 flex items-center justify-center group">
+
+       <svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .quiz-document { fill: #ecf0f1; stroke: #34495e; stroke-width: 2; }
+    .quiz-mark { fill: #e74c3c; }
+    .ai-network-line { stroke: #2ecc71; stroke-width: 1; opacity: 0.6; }
+    .ai-node { fill: #2ecc71; }
+  </style>
+
+  <rect x="25" y="15" width="50" height="70" rx="5" ry="5" class="quiz-document"/>
+  
+  <path d="M 75 15 L 60 15 L 75 30 Z" fill="#bdc3c7"/>
+  
+  <text x="50" y="55" font-size="20" font-weight="bold" text-anchor="middle" class="quiz-mark">?</text>
+
+  <circle cx="35" cy="40" r="3" class="ai-node"/>
+  <circle cx="50" cy="25" r="3" class="ai-node"/>
+  <circle cx="65" cy="40" r="3" class="ai-node"/>
+  <circle cx="50" cy="75" r="3" class="ai-node"/>
+  <circle cx="75" cy="55" r="3" class="ai-node"/>
+
+  <line x1="35" y1="40" x2="50" y2="25" class="ai-network-line"/>
+  <line x1="50" y1="25" x2="65" y2="40" class="ai-network-line"/>
+  <line x1="65" y1="40" x2="75" y2="55" class="ai-network-line"/>
+  <line x1="35" y1="40" x2="50" y2="75" class="ai-network-line"/>
+  <line x1="50" y1="75" x2="75" y2="55" class="ai-network-line"/>
+
+</svg>
+
+
+            <!-- Bottom Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+
+            <!-- Text -->
+            <div class="absolute bottom-0 p-6 text-white">
+                <h3 class="font-bold text-lg mb-1">AI Quizzes</h3>
+                <p class="text-white/80 text-sm">
+                    Intelligent, adaptive assessments that adjust to learner level.
+                </p>
             </div>
-            <div class="feature-box p-8 rounded-xl" id="feat2">
-                <h3 class="font-bold text-lg mb-2 text-purple-600">Concept Maps</h3>
-                <p class="text-slate-600">Visual knowledge structures that show how ideas connect.</p>
-            </div>
-            <div class="feature-box p-8 rounded-xl" id="feat3">
-                <h3 class="font-bold text-lg mb-2 text-blue-600">Human Video Courses</h3>
-                <p class="text-slate-600">Expert-led instruction, structured and on-demand.</p>
-            </div>
-            <div class="feature-box p-8 rounded-xl" id="feat4">
-                <h3 class="font-bold text-lg mb-2 text-purple-600">Manager Analytics</h3>
-                <p class="text-slate-600">Track team progress, engagement, and learning outcomes.</p>
-            </div>
-            <div class="feature-box p-8 rounded-xl" id="feat5">
-                <h3 class="font-bold text-lg mb-2 text-blue-600">Seat-Based Access</h3>
-                <p class="text-slate-600">Flexible licensing for growing teams.</p>
-            </div>
-            <div class="feature-box p-8 rounded-xl" id="feat6">
-                <h3 class="font-bold text-lg mb-2 text-purple-600">Gamification Optional</h3>
-                <p class="text-slate-600">Keep learning professional or add badges & rewards.</p>
-            </div>
+
+            <!-- Bottom Accent Line -->
+            <div class="absolute bottom-0 left-0 w-full h-1 bg-blue-500"></div>
         </div>
-    </section>
+
+
+        <!-- CARD 2 -->
+        <div class="relative h-64 rounded-2xl overflow-hidden bg-slate-900 flex items-center justify-center group">
+
+          <svg width="250" height="150" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif" font-size="8">
+  <style>
+    .node { fill: #fcf3cf; stroke: #f1c40f; stroke-width: 2; }
+    .text { fill: #2c3e50; text-anchor: middle; dominant-baseline: central; }
+    .connection { stroke: #3498db; stroke-width: 2; marker-end: url(#arrowhead); }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+      <polygon points="6 2, 0 4, 0 0" fill="#3498db" />
+    </marker>
+  </defs>
+
+  <rect x="55" y="5" width="40" height="20" rx="5" ry="5" class="node"/>
+  <text x="75" y="15" class="text">Main Idea</text>
+
+  <circle cx="35" cy="75" r="15" class="node"/>
+  <text x="35" y="75" class="text">Detail A</text>
+
+  <ellipse cx="115" cy="75" rx="20" ry="10" class="node"/>
+  <text x="115" y="75" class="text">Detail B</text>
+
+  <line x1="65" y1="25" x2="40" y2="60" class="connection"/>
+
+  <line x1="85" y1="25" x2="110" y2="65" class="connection"/>
+  
+  <line x1="50" y1="75" x2="95" y2="75" class="connection"/>
+
+</svg>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+
+            <div class="absolute bottom-0 p-6 text-white">
+                <h3 class="font-bold text-lg mb-1">Concept Maps</h3>
+                <p class="text-white/80 text-sm">
+                    Visual structures that show how ideas connect.
+                </p>
+            </div>
+
+            <div class="absolute bottom-0 left-0 w-full h-1 bg-purple-500"></div>
+        </div>
+
+
+        <!-- CARD 3 -->
+        <div class="relative h-64 rounded-2xl overflow-hidden bg-slate-900 flex items-center justify-center group">
+
+                <svg width="200" height="150" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+        <style>
+            .screen { fill: #34495e; stroke: #2c3e50; stroke-width: 3; }
+            .human-profile { fill: #ecf0f1; }
+            .play-button { fill: #e74c3c; }
+        </style>
+
+        <rect x="20" y="15" width="110" height="70" rx="10" ry="10" class="screen"/>
+
+        <g class="human-profile" transform="translate(75, 55)">
+            <circle cx="0" cy="-15" r="10"/>
+            <path d="M -25 5 C 0 30, 0 30, 25 5 L 25 20 L -25 20 Z"/>
+        </g>
+        
+        <g transform="translate(75, 50)">
+            <path d="M -15 -15 L 15 0 L -15 15 Z" class="play-button"/>
+        </g>
+
+        </svg>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+
+            <div class="absolute bottom-0 p-6 text-white">
+                <h3 class="font-bold text-lg mb-1">Human Video Courses</h3>
+                <p class="text-white/80 text-sm">
+                    Expert-led instruction, structured and on-demand.
+                </p>
+            </div>
+
+            <div class="absolute bottom-0 left-0 w-full h-1 bg-blue-500"></div>
+        </div>
+
+
+        <!-- CARD 4 -->
+        <div class="relative h-64 rounded-2xl overflow-hidden bg-slate-900 flex items-center justify-center group">
+
+            <svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="100" fill="none"/>
+
+            <line x1="15" y1="85" x2="85" y2="85" stroke="#3498db" stroke-width="2"/>
+            
+            <rect x="25" y="65" width="10" height="20" fill="#3498db"/>
+            
+            <rect x="45" y="45" width="10" height="40" fill="#3498db"/>
+            
+            <rect x="65" y="30" width="10" height="55" fill="#3498db"/>
+
+            <circle cx="50" cy="30" r="15" fill="#2ecc71" stroke="#2c3e50" stroke-width="1"/>
+            
+            <path d="M 30 40 L 70 40 L 65 60 L 35 60 Z" fill="#2ecc71" stroke="#2c3e50" stroke-width="1"/>
+
+            <circle cx="55" cy="25" r="2" fill="white"/>
+            
+            </svg>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+
+            <div class="absolute bottom-0 p-6 text-white">
+                <h3 class="font-bold text-lg mb-1">Manager Analytics</h3>
+                <p class="text-white/80 text-sm">
+                    Track progress, engagement, and learning outcomes.
+                </p>
+            </div>
+
+            <div class="absolute bottom-0 left-0 w-full h-1 bg-purple-500"></div>
+        </div>
+
+
+        <!-- CARD 5 -->
+        <div class="relative h-64 rounded-2xl overflow-hidden bg-slate-900 flex items-center justify-center group">
+
+          <svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .fill-gray { fill: #bdc3c7; }
+    .stroke-dark { stroke: #34495e; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .access-color { fill: #2ecc71; }
+  </style>
+  
+  <rect x="30" y="30" width="40" height="10" class="fill-gray stroke-dark"/>
+  
+  <rect x="25" y="40" width="50" height="15" class="fill-gray stroke-dark"/>
+  
+  <line x1="30" y1="55" x2="30" y2="75" class="stroke-dark"/>
+  <line x1="70" y1="55" x2="70" y2="75" class="stroke-dark"/>
+  
+  <g class="access-color" transform="translate(40, 5)">
+    <path d="M 0 30 L 15 45 L 45 15" stroke="#2ecc71" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+</svg>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+
+            <div class="absolute bottom-0 p-6 text-white">
+                <h3 class="font-bold text-lg mb-1">Seat-Based Access</h3>
+                <p class="text-white/80 text-sm">
+                    Flexible licensing for growing teams.
+                </p>
+            </div>
+
+            <div class="absolute bottom-0 left-0 w-full h-1 bg-blue-500"></div>
+        </div>
+
+
+        <!-- CARD 6 -->
+        <div class="relative h-64 rounded-2xl overflow-hidden bg-slate-900 flex items-center justify-center group">
+
+                        <svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                    .toggle-track { fill: #ecf0f1; stroke: #bdc3c7; stroke-width: 3; }
+                    .toggle-handle { fill: #95a5a6; stroke: #7f8c8d; stroke-width: 2; }
+                    .trophy-gold { fill: #f1c40f; stroke: #e67e22; stroke-width: 2; }
+                    .trophy-shadow { fill: #f39c12; }
+                </style>
+
+                <rect x="20" y="70" width="60" height="20" rx="10" ry="10" class="toggle-track"/>
+                
+                <circle cx="30" cy="80" r="8" class="toggle-handle"/>
+                
+                <g transform="translate(50, 45)">
+                    <rect x="-10" y="30" width="20" height="5" rx="2" ry="2" class="trophy-gold"/>
+                    
+                    <path d="M -20 25 L 20 25 C 25 15, 10 5, 0 0 C -10 5, -25 15, -20 25 Z" class="trophy-gold"/>
+                    
+                    <path d="M -20 15 C -25 10, -30 15, -20 25" class="trophy-gold" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 20 15 C 25 10, 30 15, 20 25" class="trophy-gold" stroke-linecap="round" stroke-linejoin="round"/>
+                    
+                    <circle cx="0" cy="15" r="5" class="trophy-shadow"/>
+                </g>
+                
+                </svg>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+
+            <div class="absolute bottom-0 p-6 text-white">
+                <h3 class="font-bold text-lg mb-1">Gamification Optional</h3>
+                <p class="text-white/80 text-sm">
+                    Keep learning professional or add badges & rewards.
+                </p>
+            </div>
+
+            <div class="absolute bottom-0 left-0 w-full h-1 bg-purple-500"></div>
+        </div>
+
+    </div>
+</section>
+
  <section class="py-14 md:py-20 px-4 md:px-6 bg-slate-200 rounded-2xl max-w-7xl mx-auto text-center">
     <h2 class="text-3xl md:text-4xl font-bold mb-6 md:mb-8 leading-snug" id="ctaTitle">
         Ready to turn training into a competitive advantage?
