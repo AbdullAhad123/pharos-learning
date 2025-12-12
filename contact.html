@@ -93,32 +93,53 @@
     </div>
 </div>
     <!-- Contact Form -->
-    <section class="py-24 px-6 max-w-2xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4" id="contactH1">Request Demo</h1>
-        <p class="text-lg text-slate-600 mb-12" id="contactDesc">We'll be in touch within 24 hours to schedule your personalized walkthrough.</p>
+<section class="py-24 px-6">
+    <div class="max-w-7xl mx-auto bg-slate-100 rounded-3xl p-12">
 
-        <form class="space-y-6" id="contactForm">
-            <div id="formContainer">
-                <div class="form-group">
-                    <label class="block font-semibold mb-2">Full Name</label>
-                    <input type="text" placeholder="Your name" class="w-full px-4 py-3 rounded-lg" required>
+        <div class="max-w-2xl mx-auto">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4" id="contactH1">Request Demo</h1>
+            <p class="text-lg text-slate-600 mb-12" id="contactDesc">
+                We'll be in touch within 24 hours to schedule your personalized walkthrough.
+            </p>
+
+            <form class="space-y-6" id="contactForm">
+                <div id="formContainer" class="space-y-6">
+
+                    <div class="form-group">
+                        <label class="block font-semibold mb-2">Full Name</label>
+                        <input type="text" placeholder="Your name" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-300" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="block font-semibold mb-2">Work Email</label>
+                        <input type="email" placeholder="you@company.com" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-300" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="block font-semibold mb-2">Company Name</label>
+                        <input type="text" placeholder="Your company" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-300" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="block font-semibold mb-2">Role</label>
+                        <input type="text" placeholder="Your role" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-300" required>
+                    </div>
+
                 </div>
-                <div class="form-group">
-                    <label class="block font-semibold mb-2">Work Email</label>
-                    <input type="email" placeholder="you@company.com" class="w-full px-4 py-3 rounded-lg" required>
-                </div>
-                <div class="form-group">
-                    <label class="block font-semibold mb-2">Company Name</label>
-                    <input type="text" placeholder="Your company" class="w-full px-4 py-3 rounded-lg" required>
-                </div>
-                <div class="form-group">
-                    <label class="block font-semibold mb-2">Role</label>
-                    <input type="text" placeholder="Your role" class="w-full px-4 py-3 rounded-lg" required>
-                </div>
-            </div>
-            <button type="submit" class="w-full btn-primary text-white py-4 rounded-lg font-semibold">Request Demo</button>
-        </form>
-    </section>
+
+    <div class="flex justify-center">
+    <button type="submit" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold">
+        Request Demo
+    </button>
+</div>
+
+
+            </form>
+        </div>
+
+    </div>
+</section>
+
 
     <!-- Footer -->
  <footer class="py-12 px-6 bg-white text-black mt-20">
@@ -155,14 +176,7 @@
           delay: 0.6
         });
         
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            gsap.to(this, { opacity: 0, y: -20, duration: 0.3, onComplete: () => {
-                alert('Thank you! We will contact you soon.');
-                this.reset();
-                gsap.to(this, { opacity: 1, y: 0, duration: 0.3 });
-            }});
-        });
+        
     </script>
     <script src="./assets/js/mobile-menu.js"></script>
 </body>
