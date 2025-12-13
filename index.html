@@ -147,54 +147,7 @@
     class="text-blue-500 inline-block min-w-[14ch]"
   ></span>
 </h1>
-<script>
-const phrases = [
-  "modern enterprises",
-  "growing teams",
-  "global organizations",
-  "real-world learning"
-];
 
-const el = document.getElementById("rotatingText");
-
-let phraseIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-const typingSpeed = 55;      // typing speed
-const deletingSpeed = 35;    // deleting speed
-const holdAfterType = 1200;  // pause after full word
-const holdAfterDelete = 400; // pause before typing next
-
-function typeLoop() {
-  const currentPhrase = phrases[phraseIndex];
-
-  if (!isDeleting) {
-    // typing
-    el.textContent = currentPhrase.slice(0, charIndex + 1);
-    charIndex++;
-
-    if (charIndex === currentPhrase.length) {
-      setTimeout(() => isDeleting = true, holdAfterType);
-    }
-  } else {
-    // deleting
-    el.textContent = currentPhrase.slice(0, charIndex - 1);
-    charIndex--;
-
-    if (charIndex === 0) {
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      setTimeout(() => {}, holdAfterDelete);
-    }
-  }
-
-  const speed = isDeleting ? deletingSpeed : typingSpeed;
-  setTimeout(typeLoop, speed);
-}
-
-typeLoop();
-</script>
 
 
 
@@ -863,5 +816,6 @@ typeLoop();
     <script src="./assets/js/mobile-menu.js"></script>
     <script src="./assets/js/features-animate.js"></script>
     <script src="./assets/js/accordian.js"></script>
+    <script src="./assets/js/rotating-text.js"></script>
 </body>
 </html>
