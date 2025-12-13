@@ -1,42 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
     const blocks = document.querySelectorAll(".feature-block");
 
-    const splitLines = (element) => {
-        const text = element.innerText;
-        element.innerHTML = "";
+    // Split paragraph into animated words (SAFE)
+const splitWords = (element) => {
+    if (!element || element.dataset.split === "1") return;
 
-        const words = text.split(" ");
-        let line = document.createElement("span");
-        line.className = "line";
-        element.appendChild(line);
+    const text = element.textContent.trim();
+    const words = text.split(/\s+/);
 
-        words.forEach((word, index) => {
-            const testLine = line.innerText + word + " ";
-            line.innerText = testLine;
+    element.dataset.split = "1";
+    element.innerHTML = "";
 
-            if (line.offsetWidth > element.offsetWidth && index !== 0) {
-                line.innerText = line.innerText.trim();
-                line = document.createElement("span");
-                line.className = "line";
-                line.innerText = word + " ";
-                element.appendChild(line);
-            }
-        });
+    words.forEach(word => {
+        const span = document.createElement("span");
+        span.className = "word";
+        span.textContent = word;
+        span.style.display = "inline-block";
+        span.style.marginRight = "0.35em"; // 🔑 THIS FIXES SPACING
+        span.style.opacity = "0";
+        span.style.filter = "blur(6px)";
+        span.style.transform = "translateY(12px)";
+        element.appendChild(span);
+    });
+};
 
-        element.querySelectorAll(".line").forEach(l => {
-            l.style.display = "block";
-            l.style.opacity = "0";
-            l.style.filter = "blur(6px)";
-            l.style.transform = "translateY(12px)";
-        });
-    };
-
+    // Initial state
     blocks.forEach(block => {
         const img = block.querySelector(".img-wrap");
         const content = block.querySelector(".content-wrap");
         const paragraph = content.querySelector("p");
 
-        const isReversed = img.compareDocumentPosition(content) & Node.DOCUMENT_POSITION_FOLLOWING;
+        const isReversed =
+            img.compareDocumentPosition(content) & Node.DOCUMENT_POSITION_FOLLOWING;
 
         img.style.opacity = "0";
         content.style.opacity = "0";
@@ -47,9 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
         img.style.transform = `translateX(${isReversed ? "80px" : "-80px"})`;
         content.style.transform = `translateX(${isReversed ? "-80px" : "80px"})`;
 
-        splitLines(paragraph);
+        splitWords(paragraph);
     });
 
+    // Intersection observer animation
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
@@ -57,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const block = entry.target;
             const img = block.querySelector(".img-wrap");
             const content = block.querySelector(".content-wrap");
-            const lines = content.querySelectorAll(".line");
+            const words = content.querySelectorAll(".word");
 
             img.style.transition = "all 1.2s cubic-bezier(0.16, 1, 0.3, 1)";
             content.style.transition = "all 1.2s cubic-bezier(0.16, 1, 0.3, 1)";
@@ -71,13 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
             img.style.transform = "translateX(0)";
             content.style.transform = "translateX(0)";
 
-            lines.forEach((line, i) => {
+            words.forEach((word, i) => {
                 setTimeout(() => {
-                    line.style.transition = "all 0.8s ease";
-                    line.style.opacity = "1";
-                    line.style.filter = "blur(0)";
-                    line.style.transform = "translateY(0)";
-                }, 300 + i * 120);
+                    word.style.transition = "all 0.6s ease";
+                    word.style.opacity = "1";
+                    word.style.filter = "blur(0)";
+                    word.style.transform = "translateY(0)";
+                }, 200 + i * 40);
             });
 
             observer.unobserve(block);
