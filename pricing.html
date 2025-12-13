@@ -58,6 +58,31 @@
         white-space: nowrap;
         animation: marquee 30s linear infinite;
         }
+        .faq-question {
+            width: 100%;
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.35s ease;
+            color: #475569;
+            padding-bottom: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            opacity: 1;
+            padding-bottom: 24px;
+        }
 
     </style>
      <link rel="stylesheet" href="assets/css/style.css">
@@ -267,6 +292,202 @@
 
   </div>
 </section>
+<section class="py-24 px-6 bg-white">
+  <div class="max-w-7xl mx-auto text-center">
+
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-16">
+      Still not sure?
+    </h2>
+
+    <!-- Options -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+
+      <!-- Contact Sales -->
+      <div class="max-w-sm mx-auto">
+        <img
+          src="assets/img/contact-sales.svg"
+          alt="Contact sales"
+          class="h-8 mb-6"
+        />
+
+        <h3 class="text-lg font-semibold mb-2">
+          Talk to sales
+        </h3>
+
+        <p class="text-slate-600 mb-4">
+          Get help choosing the right plan and see how Pharos fits your
+          organization’s learning goals.
+        </p>
+
+        <a
+          href="contact.html"
+          class="font-semibold text-blue-600 hover:text-blue-700 transition"
+        >
+          Speak with a learning expert →
+        </a>
+      </div>
+
+      <!-- Community -->
+      <div class="max-w-sm mx-auto">
+        <img
+          src="assets/img/community.svg"
+          alt="Pharos community"
+          class="h-8 mb-6"
+        />
+
+        <h3 class="text-lg font-semibold mb-2">
+          Pharos community
+        </h3>
+
+        <p class="text-slate-600 mb-4">
+          Learn how teams use Pharos in real-world scenarios and
+          exchange ideas with peers.
+        </p>
+
+        <a
+          href="#"
+          class="font-semibold text-blue-600 hover:text-blue-700 transition"
+        >
+          Visit the community →
+        </a>
+      </div>
+
+      <!-- Help -->
+      <div class="max-w-sm mx-auto">
+        <img
+          src="assets/img/help.svg"
+          alt="Help center"
+          class="h-8 mb-6"
+        />
+
+        <h3 class="text-lg font-semibold mb-2">
+          Help center
+        </h3>
+
+        <p class="text-slate-600 mb-4">
+          Explore detailed guides and resources to get the most
+          out of the Pharos platform.
+        </p>
+
+        <a
+          href="#"
+          class="font-semibold text-blue-600 hover:text-blue-700 transition"
+        >
+          Visit Pharos Help →
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="py-24 px-6 bg-white">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Heading -->
+    <h2 class="text-4xl font-extrabold mb-12">
+      FAQ
+    </h2>
+
+    <div class="divide-y divide-slate-200" id="faq">
+
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Is Pharos suitable for smaller organizations?
+          <span>−</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Pharos is designed to scale. While many customers run learning programs
+            with hundreds or thousands of learners, smaller teams benefit from the
+            same adaptive learning, automation, and analytics without added complexity.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          What types of organizations use Pharos?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Pharos is used by organizations training employees, partners, and customers.
+            It’s a strong fit for companies managing onboarding, compliance, enablement,
+            and continuous skill development across distributed teams.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          How does Pharos pricing work?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Pricing is based on your use case, learner volume, and required capabilities.
+            This ensures you only pay for what you need while maintaining flexibility as
+            your learning programs evolve.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Does Pharos support integrations with other tools?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes. Pharos integrates with common HR, CRM, and productivity tools.
+            Enterprise plans include extended integration options and API access
+            for custom workflows.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          How is learner activity and progress measured?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Pharos tracks completion, comprehension, engagement, and skill progression.
+            Managers gain clear insights into learning impact rather than relying on
+            surface-level metrics.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          What kind of support does Pharos provide?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            All customers receive guided onboarding and ongoing support.
+            Enterprise plans include priority assistance and dedicated resources
+            to ensure long-term success.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 
     <!-- CTA -->
@@ -350,7 +571,8 @@
           scrollTrigger: { trigger: '#solutionsCTA', start: 'top 85%', toggleActions: 'play none none none' }
         });
     </script>
-    <script src="./assets/js/mobile-menu.js"></script>
 
+<script src="./assets/js/mobile-menu.js"></script>
+<script src="./assets/js/faq-sections.js"></script>
 </body>
 </html>
