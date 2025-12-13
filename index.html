@@ -12,7 +12,14 @@
        
         body { overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
-        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+            }
+
+            .animate-marquee {
+            animation: marquee 30s linear infinite;
+            }
         .gradient-text {
           background: linear-gradient(135deg, #0066FF 0%, #7C3AED 100%);
           -webkit-background-clip: text;
@@ -107,84 +114,74 @@
         </button>
     </div>
 </div>
-
-
-
     <!-- Hero Section -->
-<section class="py-12 md:py-15 px-6 max-w-8xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+<section class="relative min-h-screen overflow-hidden">
 
-        <!-- LEFT HERO TEXT -->
-        <div>
-            <h1 class="text-4xl md:text-7xl font-bold mb-6 leading-tight" id="heroTitle">
-                Adaptive learning reimagined — for organizations that demand more.
-            </h1>
+    <!-- Background Video -->
+    <video
+        class="absolute inset-0 w-full h-full object-cover"
+        src="assets/img/hero-bg.mp4"
+        autoplay
+        muted
+        loop
+        playsinline>
+    </video>
 
-            <p class="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed" id="heroSubtitle">
-                Human-led courses. AI-powered paths. Results you can measure.
-            </p>
+   
+    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30"></div>
 
-            <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center" id="heroCTA">
-                <a href="contact.html" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold">Book a Demo</a>
-                <a href="#" class="text-blue-600 font-semibold hover:text-blue-700">Watch 2-min overview →</a>
-            </div>
-        </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-40 pb-24 flex flex-col justify-between min-h-screen">
 
-        <!-- RIGHT HERO IMAGES -->
-        <div class="space-y-6">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+                    Adaptive learning,<br>
+                    built for <span class="text-blue-500">modern enterprises</span>
+                </h1>
 
-            <!-- MOBILE STACKED UI -->
-            <div class="md:hidden space-y-4">
+                <p class="mt-6 text-lg md:text-xl text-white/80">
+                    Human-led courses powered by AI that adapts, measures progress, and delivers outcomes that actually matter.
+                </p>
 
-                <img 
-                    src="https://i.pinimg.com/1200x/30/1b/62/301b62ca057b5795da0fb34773ed04d7.jpg"
-                    class="w-full h-[300px] object-cover rounded-2xl shadow-md"
-                >
+                <div class="flex gap-6 mt-8 items-center">
+                    <a href="contact.html"
+                    class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-white/90 transition">
+                        Book a demo
+                    </a>
 
-                <img 
-                    src="https://i.pinimg.com/1200x/86/de/25/86de25bf5b2b497bb8be816e43e60bc0.jpg"
-                    class="w-full h-[220px] object-cover rounded-2xl shadow-md"
-                >
-
-                <img 
-                    src="https://i.pinimg.com/736x/80/1c/0d/801c0d08a1b08141ec3b5d04d7b0d5d9.jpg"
-                    class="w-full h-[260px] object-cover rounded-2xl shadow-md"
-                >
-            </div>
-
-            <!-- DESKTOP LAYOUT -->
-            <div class="hidden md:block space-y-6">
-
-                <!-- Row 1 -->
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="col-span-2 md:col-span-1">
-                        <img 
-                            src="https://i.pinimg.com/1200x/30/1b/62/301b62ca057b5795da0fb34773ed04d7.jpg"
-                            class="w-full h-[260px] md:h-[340px] object-cover rounded-2xl"
-                        >
-                    </div>
-
-                    <div>
-                        <img 
-                            src="https://i.pinimg.com/1200x/86/de/25/86de25bf5b2b497bb8be816e43e60bc0.jpg"
-                            class="w-full h-[260px] md:h-[340px] object-cover rounded-2xl"
-                        >
-                    </div>
+                    <a href="#"
+                    class="text-white font-semibold hover:underline">
+                        See how it works
+                    </a>
                 </div>
+            </div>
 
-                <!-- Row 2 -->
-                <div>
-                    <img 
-                        src="https://i.pinimg.com/736x/80/1c/0d/801c0d08a1b08141ec3b5d04d7b0d5d9.jpg"
-                        class="w-full h-[260px] md:h-[300px] object-cover rounded-2xl"
-                    >
-                </div>
+
+        <!-- Bottom Marquee -->
+        <div class="mt-24 overflow-hidden">
+            <div class="flex items-center gap-20 animate-marquee whitespace-nowrap opacity-80">
+
+                <img src="assets/img/Dior_Logo_white.svg" class="h-8">
+                <img src="assets/img/Dior_Logo_white.svg" class="h-8">
+                <img src="assets/img/Dior_Logo_white.svg" class="h-8">
+                <img src="assets/img/Dior_Logo_white.svg" class="h-8">
+                <img src="assets/img/Dior_Logo_white.svg" class="h-8">
+                <img src="assets/img/Dior_Logo_white.svg" class="h-8">
+                <img src="assets/img/Dior_Logo_white.svg" class="h-8">
+                <img src="assets/img/Dior_Logo_white.svg" class="h-8">
+                <img src="assets/img/Dior_Logo_white.svg" class="h-8">
+                <img src="assets/img/Dior_Logo_white.svg" class="h-8">
+                <img src="assets/img/Dior_Logo_white.svg" class="h-8">
+                <img src="assets/img/Dior_Logo_white.svg" class="h-8">
+                <img src="assets/img/Dior_Logo_white.svg" class="h-8">
+                
 
             </div>
         </div>
 
     </div>
 </section>
+
 
 
     <!-- How It Works -->
