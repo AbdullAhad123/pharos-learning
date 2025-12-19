@@ -89,7 +89,7 @@
 </head>
 <body class="bg-white text-slate-900">
     <!-- Header -->
-     <header class="top-0 bg-white/90 backdrop-blur-xl z-50">
+ <header class="top-0 sticky bg-white/90 backdrop-blur-xl z-50">
     <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         <!-- LEFT LOGO -->
@@ -105,6 +105,27 @@
                 <a href="contact.html" class="hover:text-blue-600">CONTACT</a>
             </div>
         </div>
+
+    <div class="relative group">
+        <button class="flex items-center gap-2 bg-slate-100 px-3 py-2 rounded-lg shadow-sm hover:bg-slate-200 transition">
+            <img src="assets/img/united-kingdom.png" alt="English" class="w-5 h-5 rounded-full">
+            <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </button>
+
+        
+        <div class="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-lg opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition pointer-events-none group-hover:pointer-events-auto">
+            <a href="?lang=en" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-100 rounded-t-xl">
+                <img src="assets/img/united-kingdom.png" class="w-5 h-5 rounded-full">
+                <span class="text-sm">English</span>
+            </a>
+            <a href="?lang=it" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-100 rounded-b-xl">
+                <img src="assets/img/italy.png" class="w-5 h-5 rounded-full">
+                <span class="text-sm">Italiano</span>
+            </a>
+        </div>
+    </div>
 
         <!-- RIGHT DESKTOP CTA -->
         <div class="hidden md:flex items-center gap-6">
@@ -145,22 +166,22 @@
 
 <section class="py-32 px-6 bg-white">
   <div class="max-w-7xl mx-auto text-center">
+<!-- SECTION HEADER -->
+<h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+  Recognition and collaborations
+</h1>
 
-    <!-- Heading -->
-    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-      AI-first learning.<br />
-      Priced for your organization.
-    </h1>
+<p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-16">
+  Pharos is adopted and validated by academic partners, technology clusters,
+  and institutional stakeholders who share a commitment to responsible
+  digital competence.
+</p>
 
-    <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-16">
-      Flexible pricing designed to scale with your teams, learners, and business goals.
-      Pay for impact, not complexity.
-    </p>
+<!-- TRUST LINE -->
+<p class="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-8">
+  Recognized by academic, technological, and institutional partners
+</p>
 
-    <!-- Trust line -->
-    <p class="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-8">
-      Trusted by leading enterprise teams worldwide
-    </p>
 
     <!-- Marquee -->
     <div class="relative overflow-hidden">
