@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions - Pharos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/font.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+       
+       
+        .accent-gold { color: #D4AF37; }
+        .hover-lift { transition: all 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        a { text-decoration: none; color: inherit; }
+        
+        .gradient-text {
+          background: linear-gradient(135deg, #0066FF 0%, #7C3AED 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        
+        .btn-primary {
+          background: linear-gradient(135deg, #0066FF 0%, #7C3AED 100%);
+          transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 12px 24px rgba(0, 102, 255, 0.3);
+        }
+        
+        .solution-card {
+          border: 2px solid rgba(0, 102, 255, 0.15);
+          background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+          transition: all 0.3s ease;
+        }
+        
+        .solution-card:hover {
+          border-color: rgba(0, 102, 255, 0.3);
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0, 102, 255, 0.15);
+        }
+    </style>
+     <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-white text-slate-900">
+
+<header class="top-0 sticky bg-white/90 backdrop-blur-xl z-50">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <a href="index.it.html" class="text-2xl font-bold tracking-tight">Pharos Learning</a>
+
+        <div class="hidden md:flex items-center justify-center">
+            <div class="bg-slate-100 px-6 py-3 rounded-2xl shadow-sm flex gap-8 text-sm font-medium tracking-wide">
+                <a href="products.it.html" class="hover:text-blue-600">PRODOTTO</a>
+                <a href="pricing.it.html" class="hover:text-blue-600">PREZZI</a>
+                <a href="solutions.it.html" class="hover:text-blue-600">SOLUZIONI</a>
+                <a href="about.it.html" class="hover:text-blue-600">CHI SIAMO</a>
+                <a href="contact.it.html" class="hover:text-blue-600">CONTATTI</a>
+            </div>
+        </div>
+
+        <div class="relative group">
+            <button class="flex items-center gap-2 bg-slate-100 px-3 py-2 rounded-lg shadow-sm hover:bg-slate-200 transition">
+                <img src="assets/img/italy.png" alt="Italiano" class="w-5 h-5 rounded-full">
+                <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+
+            <div class="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-lg opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition pointer-events-none group-hover:pointer-events-auto">
+                <a href="solutions.html" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-100 rounded-t-xl">
+                    <img src="assets/img/united-kingdom.png" class="w-5 h-5 rounded-full">
+                    <span class="text-sm">English</span>
+                </a>
+                <a href="solutions.it.html" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-100 rounded-b-xl">
+                    <img src="assets/img/italy.png" class="w-5 h-5 rounded-full">
+                    <span class="text-sm">Italiano</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="hidden md:flex items-center gap-6">
+            <a href="contact.it.html" class="bg-black text-white text-sm px-5 py-2 rounded-lg tracking-wide shadow hover:bg-slate-900">
+                PRENOTA UNA DEMO
+            </a>
+        </div>
+
+        <div class="md:hidden">
+            <button id="mobileMenuBtn">
+                <img src="assets/img/menu.svg" class="w-8 h-8" alt="menu">
+            </button>
+        </div>
+
+    </nav>
+</header>
+
+<div id="mobileMenuOverlay" class="fixed inset-0 bg-white z-[999] hidden opacity-0 transition-all duration-300">
+    <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl font-semibold tracking-wide">
+        <a href="products.it.html" class="hover:text-blue-600">PRODOTTO</a>
+        <a href="pricing.it.html" class="hover:text-blue-600">PREZZI</a>
+        <a href="solutions.it.html" class="hover:text-blue-600">SOLUZIONI</a>
+        <a href="about.it.html" class="hover:text-blue-600">CHI SIAMO</a>
+        <a href="contact.it.html" class="hover:text-blue-600">CONTATTI</a>
+
+        <a href="contact.it.html" class="mt-6 bg-black text-white px-6 py-3 rounded-lg shadow hover:bg-slate-900">
+            PRENOTA UNA DEMO
+        </a>
+
+        <button id="closeMenuBtn" class="absolute top-6 right-6 text-slate-700">✕</button>
+    </div>
+</div>
+
+<section class="py-16 md:py-24 px-6 max-w-6xl mx-auto">
+    <h1 class="text-5xl md:text-6xl font-bold mb-4">Soluzioni</h1>
+    <p class="text-xl text-slate-600">
+        Pharos si adatta alle esigenze formative specifiche della tua organizzazione.
+    </p>
+</section>
+
+<section class="py-20 px-6 max-w-6xl mx-auto">
+
+    <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="text-xs uppercase tracking-widest text-slate-400 mb-3">
+            A chi è rivolto Pharos
+        </p>
+        <h2 class="text-4xl font-extrabold">Progettato per…</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="p-8 rounded-3xl border border-slate-200 bg-white flex flex-col h-full">
+            <p class="text-sm font-semibold text-slate-500 mb-2">
+                Professionisti e Leader
+            </p>
+            <h3 class="text-2xl font-bold mb-4">
+                Guida con competenza
+            </h3>
+            <p class="text-slate-600 flex-grow">
+                Competenze certificate per affrontare con sicurezza intelligenza artificiale,
+                finanza digitale e requisiti normativi in continua evoluzione.
+            </p>
+        </div>
+
+        <div class="p-8 rounded-3xl border border-slate-200 bg-white flex flex-col h-full">
+            <p class="text-sm font-semibold text-slate-500 mb-2">
+                Team e Aziende
+            </p>
+            <h3 class="text-2xl font-bold mb-4">
+                Gestione delle competenze su larga scala
+            </h3>
+            <p class="text-slate-600 flex-grow">
+                Programmi formativi scalabili con metriche, reportistica e visibilità,
+                pensati per una governance delle competenze a lungo termine.
+            </p>
+        </div>
+
+        <div class="p-8 rounded-3xl border border-slate-200 bg-white flex flex-col h-full">
+            <p class="text-sm font-semibold text-slate-500 mb-2">
+                Istituzioni ed Enti Pubblici
+            </p>
+            <h3 class="text-2xl font-bold mb-4">
+                Definisci standard, non tendenze
+            </h3>
+            <p class="text-slate-600 flex-grow">
+                Standard educativi strutturati a supporto delle politiche,
+                dell’allineamento normativo e della formazione istituzionale continua.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="relative overflow-hidden rounded-3xl">
+            <img src="/assets/img/feature-3.png" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-slate-900/80"></div>
+
+            <div class="relative z-10 px-10 py-16 max-w-2xl">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
+                    Vuoi discutere le tue esigenze<br>
+                    o vedere Pharos in azione?
+                </h2>
+
+                <p class="text-white/80 mb-10">
+                    Che tu stia valutando certificazioni, allineamento normativo
+                    o infrastrutture formative su larga scala, il nostro team è pronto ad aiutarti.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="contact.it.html" class="bg-white text-slate-900 px-6 py-3 rounded-full font-semibold">
+                        Prenota una demo istituzionale
+                    </a>
+                    <a href="contact.it.html" class="border border-white/40 text-white px-6 py-3 rounded-full font-semibold">
+                        Parla con un esperto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-12 px-6 bg-white mt-20">
+    <h1 class="text-[16vw] md:text-[180px] font-black text-center">PHAROS</h1>
+    <div class="max-w-7xl mx-auto mt-10 flex justify-between text-sm text-slate-700">
+        <p>Pharos Learning © 2025</p>
+        <a href="#" class="hover:text-black">Note legali, Preferenze cookie</a>
+    </div>
+</footer>
+
+<script src="./assets/js/mobile-menu.js"></script>
+</body>
+</html>
+</html>

@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharos - Adaptive Learning Reimagined</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/font.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+       
+        body { overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+            }
+            .word {
+            will-change: transform, opacity, filter;
+            }
+
+            .animate-marquee {
+            animation: marquee 30s linear infinite;
+            }
+        .gradient-text {
+          background: linear-gradient(135deg, #0066FF 0%, #7C3AED 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        
+        .btn-primary {
+          background: linear-gradient(135deg, #0066FF 0%, #7C3AED 100%);
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .btn-primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 12px 24px rgba(0, 102, 255, 0.3);
+        }
+        
+        .feature-card {
+          border: 1px solid rgba(0, 102, 255, 0.1);
+          background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+          transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+          border-color: rgba(0, 102, 255, 0.3);
+          transform: translateY(-4px);
+          box-shadow: 0 12px 24px rgba(0, 102, 255, 0.15);
+        }
+        
+        .float-element {
+          animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gradient-to-b from-white via-blue-50/30 to-white text-slate-900">
+    <!-- Header/Navigation -->
+<header class="top-0 sticky bg-white/90 backdrop-blur-xl z-50">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <!-- LEFT LOGO -->
+        <a href="index.html" class="text-2xl font-bold tracking-tight">Pharos Learning</a>
+
+        <!-- CENTER CAPSULE MENU (desktop only) -->
+        <div class="hidden md:flex items-center justify-center">
+            <div class="bg-slate-100 px-6 py-3 rounded-2xl shadow-sm flex gap-8 text-sm font-medium tracking-wide">
+                <a href="products.html" class="hover:text-blue-600">PRODUCT</a>
+                <a href="pricing.html" class="hover:text-blue-600">PRICING</a>
+                <a href="solutions.html" class="hover:text-blue-600">SOLUTIONS</a>
+                <a href="about.html" class="hover:text-blue-600">ABOUT</a>
+                <a href="contact.html" class="hover:text-blue-600">CONTACT</a>
+            </div>
+        </div>
+
+    <div class="relative group">
+        <button class="flex items-center gap-2 bg-slate-100 px-3 py-2 rounded-lg shadow-sm hover:bg-slate-200 transition">
+            <img src="assets/img/united-kingdom.png" alt="English" class="w-5 h-5 rounded-full">
+            <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </button>
+
+        
+        <div class="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-lg opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition pointer-events-none group-hover:pointer-events-auto">
+            <a href="?lang=en" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-100 rounded-t-xl">
+                <img src="assets/img/united-kingdom.png" class="w-5 h-5 rounded-full">
+                <span class="text-sm">English</span>
+            </a>
+            <a href="?lang=it" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-100 rounded-b-xl">
+                <img src="assets/img/italy.png" class="w-5 h-5 rounded-full">
+                <span class="text-sm">Italiano</span>
+            </a>
+        </div>
+    </div>
+
+        <!-- RIGHT DESKTOP CTA -->
+        <div class="hidden md:flex items-center gap-6">
+            <a href="contact.html" class="bg-black text-white text-sm px-5 py-2 rounded-lg tracking-wide shadow hover:bg-slate-900">
+                BOOK A DEMO
+            </a>
+        </div>
+
+        <!-- MOBILE MENU ICON -->
+        <div class="md:hidden">
+            <button id="mobileMenuBtn">
+                <img src="assets/img/menu.svg" class="w-8 h-8" alt="menu">
+            </button>
+        </div>
+
+    </nav>
+</header>
+<!-- Mobile Menu Overlay -->
+<div id="mobileMenuOverlay" class="fixed inset-0 bg-white z-[999] hidden opacity-0 transition-all duration-300">
+    <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl font-semibold tracking-wide">
+        <a href="products.html" class="hover:text-blue-600">PRODUCT</a>
+<a href="pricing.html" class="hover:text-blue-600">PRICING</a>
+        <a href="solutions.html" class="hover:text-blue-600">SOLUTIONS</a>
+        <a href="about.html" class="hover:text-blue-600">ABOUT</a>
+        <a href="contact.html" class="hover:text-blue-600">CONTACT</a>
+
+        <a href="contact.html" class="mt-6 bg-black text-white px-6 py-3 rounded-lg shadow hover:bg-slate-900">
+            BOOK A DEMO
+        </a>
+
+        <!-- Close Button -->
+        <button id="closeMenuBtn" class="absolute top-6 right-6 text-slate-700">
+            ✕
+        </button>
+    </div>
+</div>
+    <!-- Hero Section -->
+<section class="relative min-h-screen overflow-hidden">
+
+    <!-- Background Video -->
+    <video
+        class="absolute inset-0 w-full h-full object-cover"
+        src="assets/img/hero-bg.mp4"
+        autoplay
+        muted
+        loop
+        playsinline>
+    </video>
+
+   
+    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30"></div>
+
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-40 pb-24 flex flex-col justify-between min-h-screen">
+
+            <div class="max-w-3xl">
+<h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+  Pharos <br>
+  Responsible Digital Competence
+  <span
+    id="rotatingText"
+    class="text-blue-500 inline-block min-w-[14ch]"
+  ></span>
+</h1>
+
+
+
+
+                <p class="mt-6 text-lg md:text-xl text-white/80">
+                  An advanced AI-powered learning platform combining institutional rigor with practical tools for teams, professionals, and organizations. Competence standards aligned with European regulatory responsibility. 
+
+                <div class="flex gap-6 mt-8 items-center">
+                    <a href="contact.html"
+                    class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-white/90 transition">
+                        Explore learning paths
+                    </a>
+
+                    <a href="contact.html"
+                    class="text-white font-semibold hover:underline">
+                        Book an institutional demo
+                    </a>
+                </div>
+            </div>
+
+
+        <!-- Bottom Marquee -->
+        <div class="mt-24 overflow-hidden">
+            <div class="flex items-center gap-20 animate-marquee whitespace-nowrap   opacity-80">
+
+                <img src="assets/img/Dior_Logo.svg" class="h-8  invert brightness-0">
+                <img src="assets/img/Dior_Logo.svg" class="h-8 invert brightness-0">
+                <img src="assets/img/Dior_Logo.svg" class="h-8 invert brightness-0">
+                <img src="assets/img/Dior_Logo.svg" class="h-8 invert brightness-0">
+                <img src="assets/img/Dior_Logo.svg" class="h-8 invert brightness-0">
+                <img src="assets/img/Dior_Logo.svg" class="h-8 invert brightness-0">
+                <img src="assets/img/Dior_Logo.svg" class="h-8 invert brightness-0">
+                <img src="assets/img/Dior_Logo.svg" class="h-8 invert brightness-0">
+                <img src="assets/img/Dior_Logo.svg" class="h-8 invert brightness-0">
+                <img src="assets/img/Dior_Logo.svg" class="h-8 invert brightness-0">
+                <img src="assets/img/Dior_Logo.svg" class="h-8 invert brightness-0">
+                <img src="assets/img/Dior_Logo.svg" class="h-8 invert brightness-0">
+             
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section class="py-20 px-6 bg-white overflow-hidden">
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center mb-24 feature-block">
+        
+        <!-- Image Left -->
+        <div class="relative h-72 md:h-96 w-full rounded-2xl overflow-hidden shadow-md img-wrap">
+            <img 
+                src="assets/img/feature-1.png"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+        </div>
+
+        <!-- Text Right -->
+        <div class="content-wrap">
+            <h2 class="text-3xl font-bold mb-6"> The new frontier of knowledge and digital responsibility</h2>
+            <p class="text-slate-600 leading-relaxed">
+           In a world where technology, AI, and regulation evolve faster than skills, more than a simple course
+platform is required.
+Pharos integrates cultural research, recognized standards, and advanced learning tools to deliver real
+competence—not performance promises.
+              </p>
+        </div>
+
+    </div>
+
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center mb-24 feature-block">
+                
+        <!-- Text Left -->
+        <div class="content-wrap">
+            <h2 class="text-3xl font-bold mb-6">Pharos is NOT:</h2>
+          <div class="mt-4 text-slate-500 text-sm space-y-2">
+        <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span>not a commercial academy</span>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span>not a generic course marketplace</span>
+        </div>
+    </div>
+
+        </div>
+
+        <!-- Image Right -->
+        <div class="relative h-72 md:h-96 w-full rounded-2xl overflow-hidden shadow-md img-wrap">
+            <img 
+                src="assets/img/feature-2.png"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+        </div>
+
+    </div>
+
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center feature-block">
+        
+        <!-- Image Left -->
+        <div class="relative h-72 md:h-96 w-full rounded-2xl overflow-hidden shadow-md img-wrap">
+            <img 
+                src="assets/img/feature-3.png"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+        </div>
+
+     <div class="content-wrap">
+
+
+    <!-- Main Heading -->
+    <h2 class="text-3xl font-bold mb-6">
+        Pharos is
+    </h2>
+
+    <!-- Identity Statements -->
+    <div class="text-slate-600 text-sm space-y-3 mb-8">
+        <div class="flex items-start gap-2">
+            <svg class="w-4 h-4 mt-0.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span>a cultural institution</span>
+        </div>
+
+        <div class="flex items-start gap-2">
+            <svg class="w-4 h-4 mt-0.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span>an infrastructure for ethical economic systems</span>
+        </div>
+
+        <div class="flex items-start gap-2">
+            <svg class="w-4 h-4 mt-0.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span>a clear voice between law and AI</span>
+        </div>
+
+        <div class="flex items-start gap-2">
+            <svg class="w-4 h-4 mt-0.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span>a school of digital and economic citizenship</span>
+        </div>
+
+        <div class="flex items-start gap-2">
+            <svg class="w-4 h-4 mt-0.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span>a regulated and principled lighthouse in the digital age</span>
+        </div>
+    </div>
+
+    <!-- Explanation Paragraph -->
+    <p class="text-slate-600 leading-relaxed mb-8">
+        Clear, actionable insights designed for managers and decision-makers. Pharos transforms learning activity into measurable outcomes, showing progress, comprehension, and real skill development across teams. Growth stops being a vague promise and becomes something you can track, validate, and align directly with business performance.
+    </p>
+
+    <!-- Outcomes -->
+    <p class="text-xs uppercase tracking-widest text-slate-400 mb-3">
+        With Pharos, you
+    </p>
+
+    <div class="text-slate-600 text-sm space-y-3">
+        <div class="flex items-start gap-2">
+            <svg class="w-4 h-4 mt-0.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span>understand the European regulatory landscape (MiCA, AI Act, GDPR)</span>
+        </div>
+
+        <div class="flex items-start gap-2">
+            <svg class="w-4 h-4 mt-0.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span>apply measurable and certified knowledge</span>
+        </div>
+
+        <div class="flex items-start gap-2">
+            <svg class="w-4 h-4 mt-0.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span>demonstrate digital responsibility through interoperable standards</span>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+
+</section>
+
+
+ 
+
+<section class="relative py-20 px-6 bg-white">
+
+  <!-- SECTION HEADER -->
+  <div class="text-center mx-auto max-w-3xl mb-20">
+    <p class="text-xs uppercase tracking-widest text-slate-400 mb-3">
+      What we offer
+    </p>
+
+    <h2 class="text-4xl font-extrabold mb-6">
+      Certified education and advanced tools
+    </h2>
+
+    <p class="text-slate-600">
+      Pharos combines structured education, adaptive intelligence, and compliance-grade tooling
+      to build responsible digital competence at scale.
+    </p>
+  </div>
+
+  <!-- PRODUCT BLOCKS -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-15">
+
+    <div class="glass p-6 rounded-2xl">
+      <h3 class="font-semibold mb-3">
+        Structured learning paths
+      </h3>
+      <p class="text-slate-600 text-sm leading-relaxed">
+        Knowledge built on rigor, not trends. Modular programs designed for professionals, teams,
+        and organizations.
+      </p>
+    </div>
+
+    <div class="glass p-6 rounded-2xl">
+      <h3 class="font-semibold mb-3">
+        Adaptive AI learning
+      </h3>
+      <p class="text-slate-600 text-sm leading-relaxed">
+        A personalized learning experience powered by AI, designed to maximize competence
+        acquisition and measurable outcomes.
+      </p>
+    </div>
+
+    <div class="glass p-6 rounded-2xl">
+      <h3 class="font-semibold mb-3">
+        Integrated compliance tools
+      </h3>
+      <p class="text-slate-600 text-sm leading-relaxed">
+        Monitoring, reporting, and metrics that connect learning outcomes with regulatory
+        requirements.
+      </p>
+    </div>
+
+    <div class="glass p-6 rounded-2xl">
+      <h3 class="font-semibold mb-3">
+        Pharos certification
+      </h3>
+      <p class="text-slate-600 text-sm leading-relaxed">
+        An official recognition of responsible digital competence, valuable for recruitment,
+        contracts, and compliance processes.
+      </p>
+    </div>
+
+  </div>
+
+
+
+</section>
+
+
+
+<section class="relative py-24 px-6 bg-white">
+    <div class="text-center mx-auto max-w-2xl">
+  <h2 class="text-4xl font-extrabold mb-6">
+    Any audience. Any scale.<br />Any learning challenge.
+  </h2>
+
+  <p class="text-slate-600 mb-10">
+    Pharos adapts to how organizations actually learn, whether you’re onboarding employees,
+    enabling partners, or educating customers at scale.
+  </p>
+</div>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+
+    <div>
+   
+
+      <div class="space-y-4" id="accordion">
+
+        <!-- Item 1 -->
+        <div class="accordion-item glass active" data-img="assets/img/accordian1.jpeg">
+          <button class="accordion-header">
+            Employee Onboarding
+            <span>−</span>
+          </button>
+          <div class="accordion-content">
+            Get new hires productive faster with structured, human-led training enhanced by adaptive AI.
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="accordion-item glass" data-img="assets/img/accordian2.jpeg">
+          <button class="accordion-header">
+            Compliance Training
+            <span>+</span>
+          </button>
+          <div class="accordion-content">
+            Deliver consistent, trackable compliance training without checkbox learning.
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="accordion-item glass" data-img="assets/img/accordian3.jpeg">
+          <button class="accordion-header">
+            Sales Enablement
+            <span>+</span>
+          </button>
+          <div class="accordion-content">
+            Equip sales teams with knowledge that sticks and adapts over time.
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="accordion-item glass" data-img="assets/img/accordian4.jpeg">
+          <button class="accordion-header">
+            Talent Development
+            <span>+</span>
+          </button>
+          <div class="accordion-content">
+            Support continuous growth with personalized learning paths.
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="accordion-item glass" data-img="assets/img/accordian5.jpeg">
+          <button class="accordion-header">
+            Partner Enablement
+            <span>+</span>
+          </button>
+          <div class="accordion-content">
+            Keep partners aligned through centralized and measurable training.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT : IMAGE -->
+    <div class="relative w-full">
+      <div class="glass p-4 rounded-2xl">
+        <img
+          id="accordionImage"
+          src="assets/img/accordian1.jpeg"
+          class="w-full h-[420px] object-cover rounded-xl transition-all duration-500"
+          alt="Audience preview"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+
+    <div class="rounded-3xl bg-slate-900 text-white p-10 flex flex-col justify-between">
+      <div>
+        <p class="text-2xl font-semibold leading-snug mb-6">
+          “Pharos completely changed how our teams learn and retain knowledge.”
+        </p>
+
+        <p class="text-white/70 leading-relaxed">
+          We moved away from static training and checklists. With Pharos, learning adapts
+          to each employee, and managers finally see real progress instead of guesswork.
+          Adoption went up, completion improved, and training stopped feeling like a chore.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 mt-10">
+        <img
+          src="https://cdn.prod.website-files.com/64183a818a4da828b83b4a85/6419807a66257c837db66fd7_pexels-rodnae-productions-7821753.webp"
+          class="w-12 h-12 rounded-full object-cover"
+          alt="Avatar"
+        />
+        <div>
+          <p class="font-semibold">Lisa Berger</p>
+          <p class="text-sm text-white/60">Head of People, Acme Co</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="rounded-3xl bg-slate-800 text-white p-10 flex flex-col justify-between">
+      <div>
+        <p class="text-2xl font-semibold leading-snug mb-6">
+          “This is the first learning platform our teams actually enjoy using.”
+        </p>
+
+        <p class="text-white/70 leading-relaxed">
+          The mix of human-led content and adaptive AI makes learning feel intentional.
+          Our sales and onboarding programs now evolve automatically based on real
+          understanding, not just time spent watching videos.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 mt-10">
+        <img
+          src="https://cdn.prod.website-files.com/64183a818a4da828b83b4a85/6419754280f7ef2eaeff1c34_pexels-rodnae-productions-7821906%20(1).webp"
+          class="w-12 h-12 rounded-full object-cover"
+          alt="Avatar"
+        />
+        <div>
+          <p class="font-semibold">John Carter</p>
+          <p class="text-sm text-white/60">Learning Ops Lead, Lorem LCC</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  
+    <!-- <section class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Product in Action</h2>
+
+            <div class="grid gap-6">
+
+                
+                <div class="w-full h-64 md:h-80 overflow-hidden">
+                    <img 
+                        src="https://i.pinimg.com/736x/06/01/c8/0601c8c361d79ebc7b582694a9750fe6.jpg" 
+                        class="cinematic-img top-img w-full h-full object-cover rounded-2xl opacity-0 blur-lg translate-x-20"
+                    >
+                </div>
+
+               
+                <div class="grid md:grid-cols-2 gap-6">
+
+                    <div class="w-full h-96 overflow-hidden">
+                        <img 
+                            src="https://www.21kschool.com/in/wp-content/uploads/sites/4/2024/09/Learning-Methods.png"
+                            class="cinematic-img bottom-img w-full h-full object-cover rounded-2xl opacity-0 blur-lg translate-y-20"
+                        >
+                    </div>
+
+                    <div class="w-full h-96 overflow-hidden">
+                        <img 
+                            src="https://img.freepik.com/free-vector/student-centered-education-knowledge-gaining-remote-graduation-bite-sized-learning-learn-own-pace-flexible-learning-process-concept_335657-814.jpg?semt=ais_hybrid&w=740&q=80"
+                            class="cinematic-img bottom-img w-full h-full object-cover rounded-2xl opacity-0 blur-lg translate-y-20"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section> -->
+   <!-- Why Pharos -->
+   <section class="py-20 px-6 bg-slate-50">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+        <h2 class="text-4xl font-bold">Why Pharos</h2>
+    </div>
+
+    <div class="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-center">
+
+        <!-- Item 1 -->
+        <div>
+           <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+    <!-- Adaptive loop -->
+    <path d="M12 3a6 6 0 110 12H6" />
+    <path d="M12 21a6 6 0 110-12h6" />
+
+    <!-- Dynamic nodes -->
+    <circle cx="6" cy="15" r="1.5" />
+    <circle cx="18" cy="9" r="1.5" />
+    <circle cx="12" cy="12" r="1.5" />
+</svg>
+
+            <p class="text-slate-700 font-medium">Adaptive by default</p>
+        </div>
+
+        <!-- Item 2 -->
+        <div>
+           <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+    
+                    <!-- Human profile -->
+                    <path d="M10 8c0-2 1.5-3.5 3.5-3.5S17 6 17 8s-1.5 3.5-3.5 3.5H13c-1.5 0-3 1-3 2.5v1" />
+
+                    <!-- AI neural nodes -->
+                    <circle cx="6" cy="6" r="1.5" />
+                    <circle cx="6" cy="12" r="1.5" />
+                    <circle cx="6" cy="18" r="1.5" />
+
+                    <!-- AI connections -->
+                    <line x1="6" y1="6" x2="10" y2="8" />
+                    <line x1="6" y1="12" x2="10" y2="10" />
+                    <line x1="6" y1="18" x2="10" y2="14" />
+
+                </svg>
+
+            <p class="text-slate-700 font-medium">AI + human-led learning</p>
+        </div>
+
+        <!-- Item 3 -->
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+            <!-- Shield Outline -->
+            <path d="M12 2l7 4v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V6l7-4z" />
+            
+            <!-- Neural-style AI nodes -->
+            <circle cx="12" cy="10" r="2" />
+            <circle cx="8" cy="14" r="1.5" />
+            <circle cx="16" cy="14" r="1.5" />
+
+            <!-- Neural connections -->
+            <line x1="12" y1="12" x2="8" y2="14" />
+            <line x1="12" y1="12" x2="16" y2="14" />
+        </svg>
+
+            <p class="text-slate-700 font-medium">Enterprise-ready & secure</p>
+        </div>
+
+        <!-- Item 4 -->
+        <div>
+           <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+
+            <!-- Toggle outline -->
+            <rect x="3" y="9" width="18" height="6" rx="3" ry="3"></rect>
+
+            <!-- Toggle knob -->
+            <circle cx="9" cy="12" r="2.5"></circle>
+
+            <!-- Gamification star -->
+            <path d="M17.5 4l1 2.5 2.5 1-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1 1-2.5z"></path>
+
+        </svg>
+
+            <p class="text-slate-700 font-medium">Engagement optional (gamification toggle)</p>
+        </div>
+
+    </div>
+    </section>
+    <!-- Final CTA -->
+<!-- MANIFESTO -->
+<section class="py-24 px-6 bg-white">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="relative overflow-hidden rounded-3xl">
+
+      <!-- Background Image -->
+      <img
+        src="/assets/img/feature-3.png"
+        alt="Pharos philosophy"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+
+      <!-- Dark Overlay -->
+      <div class="absolute inset-0 bg-slate-900/80"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 px-10 py-20 md:px-20 md:py-28 max-w-3xl">
+
+        <p class="text-xs uppercase tracking-widest text-white/60 mb-4">
+          Our philosophy
+        </p>
+
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-8 leading-tight">
+          A lighthouse in the age of digital noise
+        </h2>
+
+        <div class="space-y-5 text-white/85 leading-relaxed text-lg">
+          <p>
+            In an era of hype and regulatory confusion, Pharos stands as a
+            lighthouse of knowledge.
+          </p>
+
+          <p>
+            We do not sell promises.
+            <br>
+            We produce verifiable and recordable competence.
+          </p>
+
+          <p>
+            We build knowledge for the future of a responsible economy.
+          </p>
+        </div>
+
+        <a
+          href="about.html"
+          class="inline-flex items-center mt-10 text-white font-semibold
+                 border-b border-white/40 pb-1 hover:border-white transition"
+        >
+          Discover our full vision →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- <section class="py-24 px-6 bg-white">
+  <div class="max-w-7xl mx-auto">
+
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-12">
+      New at Pharos
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+
+      <article class="group">
+        <div class="rounded-2xl overflow-hidden bg-slate-100">
+          <img
+            src="assets/img/feature-2.png"
+            alt="Pharos update"
+            class="w-full h-44 object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+
+        <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500">
+          Product update
+        </p>
+
+        <h3 class="mt-2 text-lg font-semibold leading-snug">
+          Pharos introduces adaptive learning paths for enterprise teams
+        </h3>
+      </article>
+
+   
+      <article class="group">
+        <div class="rounded-2xl overflow-hidden bg-slate-100">
+          <img
+            src="assets/img/accordian4.jpeg"
+            alt="Pharos update"
+            class="w-full h-44 object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+
+        <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500">
+          Announcement
+        </p>
+
+        <h3 class="mt-2 text-lg font-semibold leading-snug">
+          Pharos expands analytics to deliver measurable learning outcomes
+        </h3>
+      </article>
+
+    
+      <article class="group">
+        <div class="rounded-2xl overflow-hidden bg-slate-100">
+          <img
+            src="assets/img/accordian5.jpeg"
+            alt="Pharos update"
+            class="w-full h-44 object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+
+        <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500">
+          Partnership
+        </p>
+
+        <h3 class="mt-2 text-lg font-semibold leading-snug">
+          Pharos collaborates with enterprise partners to scale learning
+        </h3>
+      </article>
+
+   
+      <article class="group">
+        <div class="rounded-2xl overflow-hidden bg-slate-100">
+          <img
+            src="assets/img/feature-3.png"
+            alt="Pharos update"
+            class="w-full h-44 object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+
+        <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500">
+          Platform
+        </p>
+
+        <h3 class="mt-2 text-lg font-semibold leading-snug">
+          Human-led courses meet AI-powered personalization in Pharos
+        </h3>
+      </article>
+
+    </div>
+  </div>
+</section> -->
+<section class="py-24 px-6 bg-white">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- SECTION HEADER -->
+    <div class="max-w-3xl mb-16">
+      <p class="text-xs uppercase tracking-widest text-slate-400 mb-3">
+        Our operational pillars
+      </p>
+
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+        One platform. Four pillars.
+      </h2>
+
+      <p class="text-slate-600">
+        Pharos is built as an integrated system, where education, compliance,
+        certification, and institutional governance reinforce each other.
+      </p>
+    </div>
+
+    <!-- PILLARS GRID -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- PILLAR 1 -->
+      <article class="p-8 rounded-3xl border border-slate-200 bg-white h-full">
+        <p class="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
+          Education
+        </p>
+
+        <h3 class="text-xl font-bold mb-4">
+          Certified, AI-driven education
+        </h3>
+
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Structured learning paths combining human expertise with adaptive
+          artificial intelligence to ensure measurable and certified competence.
+        </p>
+      </article>
+
+      <!-- PILLAR 2 -->
+      <article class="p-8 rounded-3xl border border-slate-200 bg-white h-full">
+        <p class="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
+          Compliance
+        </p>
+
+        <h3 class="text-xl font-bold mb-4">
+          Pharos Compliance Engine™
+        </h3>
+
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Operational tools translating regulatory standards into concrete
+          KPIs, monitoring, and governance-ready reporting.
+        </p>
+      </article>
+
+      <!-- PILLAR 3 -->
+      <article class="p-8 rounded-3xl border border-slate-200 bg-white h-full">
+        <p class="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
+          Certification
+        </p>
+
+        <h3 class="text-xl font-bold mb-4">
+          Interoperable digital certification
+        </h3>
+
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Verifiable credentials designed to integrate across organizations,
+          sectors, and compliance frameworks.
+        </p>
+      </article>
+
+      <!-- PILLAR 4 -->
+      <article class="p-8 rounded-3xl border border-slate-200 bg-white h-full">
+        <p class="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
+          Institution
+        </p>
+
+        <h3 class="text-xl font-bold mb-4">
+          EDCC – European Digital Competence Center
+        </h3>
+
+        <p class="text-slate-600 text-sm leading-relaxed">
+          An institutional backbone establishing standards, legitimacy, and
+          long-term trust across European digital competence ecosystems.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+   
+<footer class="py-12 px-6 bg-white text-black mt-20">
+
+    <!-- BIG BRAND NAME -->
+    <h1 class="text-[16vw] md:text-[180px] font-black leading-none text-center tracking-tight">
+        PHAROS
+    </h1>
+
+    <!-- FOOTER LINKS ROW -->
+    <div class="max-w-7xl mx-auto mt-10 flex flex-col md:flex-row justify-between items-center text-sm text-slate-700 gap-4">
+
+        <p>Pharos Learning © 2025</p>
+
+        <a href="#" class="hover:text-black transition">
+            Legal mentions, Cookies preferences
+        </a>
+
+      
+
+    </div>
+</footer>
+
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Hero animations
+        gsap.from('#heroTitle', { opacity: 0, y: 30, duration: 0.8, delay: 0.2 });
+        gsap.from('#heroSubtitle', { opacity: 0, y: 20, duration: 0.8, delay: 0.4 });
+        gsap.from('#heroCTA', { opacity: 0, y: 20, duration: 0.8, delay: 0.6 });
+        
+     
+       
+        gsap.from(".feature-block", {
+            opacity: 0,
+            y: 60,
+            duration: 1.2,
+            stagger: 0.3,
+            ease: "power3.out"
+        });
+
+        gsap.from(".img-wrap img", {
+            scale: 1.15,
+            duration: 1.5,
+            stagger: 0.3,
+            ease: "power2.out"
+        });
+
+        gsap.from(".content-wrap", {
+            opacity: 0,
+            x: 40,
+            duration: 1.2,
+            stagger: 0.3,
+            ease: "power2.out"
+        });
+        // Screenshots scale on scroll
+        gsap.from('#screenshot1, #screenshot2, #screenshot3', {
+          opacity: 0,
+          scale: 0.9,
+          duration: 0.8,
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: '#productTitle',
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        });
+        
+        // CTA animation
+        gsap.from('#ctaTitle', {
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: '#ctaTitle',
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        });
+    </script>
+    <script src="./assets/js/cinematic.js"></script>
+    <script src="./assets/js/mobile-menu.js"></script>
+    <script src="./assets/js/features-animate.js"></script>
+    <script src="./assets/js/accordian.js"></script>
+    <script src="./assets/js/rotating-text.js"></script>
+</body>
+</html>
