@@ -33,276 +33,229 @@
 </head>
 <body class="bg-white text-slate-900">
     <!-- Header -->
-<header class="top-0 sticky bg-white/90 backdrop-blur-xl z-50">
-    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header class="top-0 sticky bg-white/90 backdrop-blur-xl z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        <!-- LEFT LOGO -->
-        <a href="index.html" class="text-2xl font-bold tracking-tight">Pharos Learning</a>
+            <!-- LEFT LOGO -->
+            <a href="index.it.html" class="text-2xl font-bold tracking-tight">Pharos Learning</a>
 
-        <!-- CENTER CAPSULE MENU (desktop only) -->
-        <div class="hidden md:flex items-center justify-center">
-            <div class="bg-slate-100 px-6 py-3 rounded-2xl shadow-sm flex gap-8 text-sm font-medium tracking-wide">
-                <a href="products.html" class="hover:text-blue-600">PRODUCT</a>
-                <a href="pricing.html" class="hover:text-blue-600">PRICING</a>
-                <a href="solutions.html" class="hover:text-blue-600">SOLUTIONS</a>
-                <a href="about.html" class="hover:text-blue-600">ABOUT</a>
-                <a href="contact.html" class="hover:text-blue-600">CONTACT</a>
+            <!-- CENTER CAPSULE MENU (desktop only) -->
+            <div class="hidden md:flex items-center justify-center">
+                <div class="bg-slate-100 px-6 py-3 rounded-2xl shadow-sm flex gap-8 text-sm font-medium tracking-wide">
+                    <a href="products.it.html" class="hover:text-blue-600">PRODOTTI</a>
+                    <a href="pricing.it.html" class="hover:text-blue-600">PREZZI</a>
+                    <a href="solutions.it.html" class="hover:text-blue-600">SOLUZIONI</a>
+                    <a href="about.it.html" class="hover:text-blue-600">CHI SIAMO</a>
+                    <a href="contact.it.html" class="hover:text-blue-600">CONTATTI</a>
+                </div>
             </div>
-        </div>
 
-    <div class="relative group">
-        <button class="flex items-center gap-2 bg-slate-100 px-3 py-2 rounded-lg shadow-sm hover:bg-slate-200 transition">
-            <img src="assets/img/united-kingdom.png" alt="English" class="w-5 h-5 rounded-full">
-            <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M19 9l-7 7-7-7"></path>
-            </svg>
-        </button>
+            <div class="relative group">
+                <button class="flex items-center gap-2 bg-slate-100 px-3 py-2 rounded-lg shadow-sm hover:bg-slate-200 transition">
+                    <img src="assets/img/italy.png" alt="Italiano" class="w-5 h-5 rounded-full">
+                    <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
 
-        
-        <div class="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-lg opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition pointer-events-none group-hover:pointer-events-auto">
-            <a href="?lang=en" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-100 rounded-t-xl">
-                <img src="assets/img/united-kingdom.png" class="w-5 h-5 rounded-full">
-                <span class="text-sm">English</span>
+                <div class="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-lg opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition pointer-events-none group-hover:pointer-events-auto">
+                    <a href="about.html" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-100 rounded-t-xl">
+                        <img src="assets/img/united-kingdom.png" class="w-5 h-5 rounded-full">
+                        <span class="text-sm">English</span>
+                    </a>
+                    <a href="about.it.html" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-100 rounded-b-xl">
+                        <img src="assets/img/italy.png" class="w-5 h-5 rounded-full">
+                        <span class="text-sm">Italiano</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT DESKTOP CTA -->
+            <div class="hidden md:flex items-center gap-6">
+                <a href="contact.it.html" class="bg-black text-white text-sm px-5 py-2 rounded-lg tracking-wide shadow hover:bg-slate-900">
+                    PRENOTA UNA DEMO
+                </a>
+            </div>
+
+            <!-- MOBILE MENU ICON -->
+            <div class="md:hidden">
+                <button id="mobileMenuBtn">
+                    <img src="assets/img/menu.svg" class="w-8 h-8" alt="menu">
+                </button>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" class="fixed inset-0 bg-white z-[999] hidden opacity-0 transition-all duration-300">
+        <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl font-semibold tracking-wide">
+            <a href="products.it.html" class="hover:text-blue-600">PRODOTTI</a>
+            <a href="pricing.it.html" class="hover:text-blue-600">PREZZI</a>
+            <a href="solutions.it.html" class="hover:text-blue-600">SOLUZIONI</a>
+            <a href="about.it.html" class="hover:text-blue-600">CHI SIAMO</a>
+            <a href="contact.it.html" class="hover:text-blue-600">CONTATTI</a>
+
+            <a href="contact.it.html" class="mt-6 bg-black text-white px-6 py-3 rounded-lg shadow hover:bg-slate-900">
+                PRENOTA UNA DEMO
             </a>
-            <a href="?lang=it" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-100 rounded-b-xl">
-                <img src="assets/img/italy.png" class="w-5 h-5 rounded-full">
-                <span class="text-sm">Italiano</span>
-            </a>
-        </div>
-    </div>
 
-        <!-- RIGHT DESKTOP CTA -->
-        <div class="hidden md:flex items-center gap-6">
-            <a href="contact.html" class="bg-black text-white text-sm px-5 py-2 rounded-lg tracking-wide shadow hover:bg-slate-900">
-                BOOK A DEMO
-            </a>
-        </div>
-
-        <!-- MOBILE MENU ICON -->
-        <div class="md:hidden">
-            <button id="mobileMenuBtn">
-                <img src="assets/img/menu.svg" class="w-8 h-8" alt="menu">
+            <button id="closeMenuBtn" class="absolute top-6 right-6 text-slate-700">
+                ✕
             </button>
         </div>
-
-    </nav>
-</header>
-<!-- Mobile Menu Overlay -->
-<div id="mobileMenuOverlay" class="fixed inset-0 bg-white z-[999] hidden opacity-0 transition-all duration-300">
-    <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl font-semibold tracking-wide">
-        <a href="products.html" class="hover:text-blue-600">PRODUCT</a>
-<a href="pricing.html" class="hover:text-blue-600">PRICING</a>
-        <a href="solutions.html" class="hover:text-blue-600">SOLUTIONS</a>
-        <a href="about.html" class="hover:text-blue-600">ABOUT</a>
-        <a href="contact.html" class="hover:text-blue-600">CONTACT</a>
-
-        <a href="contact.html" class="mt-6 bg-black text-white px-6 py-3 rounded-lg shadow hover:bg-slate-900">
-            BOOK A DEMO
-        </a>
-
-        <!-- Close Button -->
-        <button id="closeMenuBtn" class="absolute top-6 right-6 text-slate-700">
-            ✕
-        </button>
-    </div>
-</div>
-
-
-   
- <!-- Vision -->
-<section class="py-28 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
-
-    <div class="fade-up">
-        <h1 class="text-6xl md:text-7xl font-black tracking-tight mb-4">Our Vision</h1>
-        <div class="h-1 w-24 bg-blue-600 rounded-full mb-8"></div>
     </div>
 
-    <p class="text-xl text-slate-600 leading-relaxed fade-up delay-2">
-        We believe that learning is the foundation of growth. Pharos exists to make adaptive, human-centered learning accessible to every organization that wants to invest in their people.
-    </p>
+    <!-- Vision -->
+    <section class="py-28 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+        <div class="fade-up">
+            <h1 class="text-6xl md:text-7xl font-black tracking-tight mb-4">La nostra visione</h1>
+            <div class="h-1 w-24 bg-blue-600 rounded-full mb-8"></div>
+        </div>
 
-</section>
-
-<!-- Mission -->
-<section class="py-28 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
-
-    <div class="fade-up">
-        <h2 class="text-5xl md:text-6xl font-bold tracking-tight text-blue-600 mb-4">
-            Our Mission
-        </h2>
-        <div class="h-1 w-24 bg-purple-600 rounded-full mb-8"></div>
-    </div>
-
-    <div class="fade-up delay-2">
-        <p class="text-xl text-slate-700 leading-relaxed mb-6">
-            To deliver learning experiences that are intelligent, human-led, and measurably effective.
+        <p class="text-xl text-slate-600 leading-relaxed fade-up delay-2">
+            Crediamo che l’apprendimento sia il fondamento della crescita. Pharos nasce per rendere
+            l’apprendimento adattivo e centrato sulle persone accessibile a ogni organizzazione che
+            desidera investire nel proprio capitale umano.
         </p>
+    </section>
 
-        <p class="text-xl font-semibold text-purple-600">
-            Built for modern learning, not legacy LMS.
-        </p>
-    </div>
+    <!-- Mission -->
+    <section class="py-28 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+        <div class="fade-up">
+            <h2 class="text-5xl md:text-6xl font-bold tracking-tight text-blue-600 mb-4">
+                La nostra missione
+            </h2>
+            <div class="h-1 w-24 bg-purple-600 rounded-full mb-8"></div>
+        </div>
 
-</section>
-<section class="py-32 px-6 ">
-  <div class="max-w-7xl mx-auto">
+        <div class="fade-up delay-2">
+            <p class="text-xl text-slate-700 leading-relaxed mb-6">
+                Offrire esperienze di apprendimento intelligenti, guidate da persone e misurabilmente efficaci.
+            </p>
 
-    <!-- SECTION HEADER -->
-    <div class="max-w-3xl mb-20">
-      <p class="text-xs uppercase tracking-widest text-slate-400 mb-4">
-        Results and metrics
-      </p>
+            <p class="text-xl font-semibold text-purple-600">
+                Progettato per l’apprendimento moderno, non per i vecchi LMS.
+            </p>
+        </div>
+    </section>
 
-      <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-        Measurable impact
-      </h2>
+    <section class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
 
-      <p class="text-lg text-slate-600 leading-relaxed">
-        Beyond content, results matter. Pharos is designed to transform learning
-        activity into observable, verifiable outcomes that organizations can
-        trust, audit, and act upon.
-      </p>
-    </div>
+            <div class="max-w-3xl mb-20">
+                <p class="text-xs uppercase tracking-widest text-slate-400 mb-4">
+                    Risultati e metriche
+                </p>
 
-    <!-- METRICS GRID -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+                    Impatto misurabile
+                </h2>
 
-      <!-- METRIC 1 -->
-      <div class="bg-white p-10 rounded-3xl border border-slate-200">
-        <h3 class="text-2xl font-bold mb-4">
-          Real skill development
-        </h3>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Oltre ai contenuti, contano i risultati. Pharos è progettato per trasformare
+                    l’attività formativa in esiti osservabili e verificabili, su cui le organizzazioni
+                    possono fare affidamento, effettuare audit e prendere decisioni.
+                </p>
+            </div>
 
-        <p class="text-slate-600 leading-relaxed">
-          Measure learning progress beyond completion rates. Pharos tracks
-          comprehension, application, and progression to reveal how skills
-          evolve over time, not just whether content was consumed.
-        </p>
-      </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="bg-white p-10 rounded-3xl border border-slate-200">
+                    <h3 class="text-2xl font-bold mb-4">
+                        Sviluppo reale delle competenze
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Misura i progressi oltre i tassi di completamento. Pharos monitora comprensione,
+                        applicazione ed evoluzione delle competenze nel tempo.
+                    </p>
+                </div>
 
-      <!-- METRIC 2 -->
-      <div class="bg-white p-10 rounded-3xl border border-slate-200">
-        <h3 class="text-2xl font-bold mb-4">
-          Interoperable certification
-        </h3>
+                <div class="bg-white p-10 rounded-3xl border border-slate-200">
+                    <h3 class="text-2xl font-bold mb-4">
+                        Certificazione interoperabile
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Ottieni certificazioni digitali verificabili, portabili e interoperabili tra
+                        organizzazioni, sistemi e contesti normativi.
+                    </p>
+                </div>
 
-        <p class="text-slate-600 leading-relaxed">
-          Obtain digital certifications that are verifiable, portable, and
-          interoperable across organizations, systems, and regulatory contexts.
-          Credentials remain meaningful beyond a single platform.
-        </p>
-      </div>
+                <div class="bg-white p-10 rounded-3xl border border-slate-200">
+                    <h3 class="text-2xl font-bold mb-4">
+                        Integrazione HR e compliance
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Integra le metriche formative direttamente nei flussi HR, di governance
+                        e conformità, collegando competenze e responsabilità.
+                    </p>
+                </div>
+            </div>
 
-      <!-- METRIC 3 -->
-      <div class="bg-white p-10 rounded-3xl border border-slate-200">
-        <h3 class="text-2xl font-bold mb-4">
-          HR and compliance integration
-        </h3>
+            <div class="max-w-3xl mt-24">
+                <p class="text-slate-600 text-lg leading-relaxed">
+                    L’apprendimento diventa strategico quando può essere misurato, certificato
+                    e allineato alla responsabilità organizzativa.
+                </p>
+            </div>
 
-        <p class="text-slate-600 leading-relaxed">
-          Integrate learning metrics directly into HR, governance, and
-          compliance workflows. Pharos connects competence development with
-          accountability, reporting, and decision-making.
-        </p>
-      </div>
+        </div>
+    </section>
 
-    </div>
+    <!-- CTA -->
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative overflow-hidden rounded-3xl">
+                <img src="/assets/img/feature-3.png" alt="Pharos Learning" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-slate-900/80"></div>
 
-    <!-- CLOSING LINE -->
-    <div class="max-w-3xl mt-24">
-      <p class="text-slate-600 text-lg leading-relaxed">
-        Learning becomes strategic when it can be measured, certified, and
-        aligned with organizational responsibility. This is where education
-        stops being abstract and starts producing lasting value.
-      </p>
-    </div>
+                <div class="relative z-10 px-10 py-16 md:px-16 md:py-20 max-w-2xl">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
+                        Pronto a trasformare il modo in cui i tuoi team apprendono?
+                    </h2>
 
-  </div>
-</section>
+                    <p class="text-white/80 mb-8 leading-relaxed">
+                        Scopri come Pharos combina formazione guidata da persone e IA adattiva
+                        per offrire risultati formativi misurabili.
+                    </p>
 
-<!-- Cta -->
- <section class="py-24 px-6 bg-white">
-  <div class="max-w-7xl mx-auto">
-
-    <div class="relative overflow-hidden rounded-3xl">
-
-      <!-- Background Image -->
-      <img
-        src="/assets/img/feature-3.png"
-        alt="Pharos Learning"
-        class="absolute inset-0 w-full h-full object-cover"
-      />
-
-      <!-- Dark Overlay -->
-      <div class="absolute inset-0 bg-slate-900/80"></div>
-
-      <!-- Content -->
-      <div class="relative z-10 px-10 py-16 md:px-16 md:py-20 max-w-2xl">
-
-        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
-          Ready to transform how your teams learn?
-        </h2>
-
-        <p class="text-white/80 mb-8 leading-relaxed">
-          See how Pharos combines human-led courses with adaptive AI to deliver
-          measurable learning outcomes across your organization.
-        </p>
-
-        <a
-          href="contact.html"
-          class="inline-flex items-center justify-center bg-white text-slate-900
-                 font-semibold px-6 py-3 rounded-full hover:bg-white/90 transition"
-        >
-          Book a demo
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
+                    <a href="contact.it.html"
+                       class="inline-flex items-center justify-center bg-white text-slate-900
+                              font-semibold px-6 py-3 rounded-full hover:bg-white/90 transition">
+                        Prenota una demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-   <footer class="py-12 px-6 bg-white text-black mt-20">
+    <footer class="py-12 px-6 bg-white text-black mt-20">
+        <h1 class="text-[16vw] md:text-[180px] font-black leading-none text-center tracking-tight">
+            PHAROS
+        </h1>
 
-    <!-- BIG BRAND NAME -->
-    <h1 class="text-[16vw] md:text-[180px] font-black leading-none text-center tracking-tight">
-        PHAROS
-    </h1>
-
-    <!-- FOOTER LINKS ROW -->
-    <div class="max-w-7xl mx-auto mt-10 flex flex-col md:flex-row justify-between items-center text-sm text-slate-700 gap-4">
-
-        <p>Pharos Learning © 2025</p>
-
-        <a href="#" class="hover:text-black transition">
-            Legal mentions, Cookies preferences
-        </a>
-
-      
-
-    </div>
-</footer>
-
+        <div class="max-w-7xl mx-auto mt-10 flex flex-col md:flex-row justify-between items-center text-sm text-slate-700 gap-4">
+            <p>Pharos Learning © 2025</p>
+            <a href="#" class="hover:text-black transition">
+                Note legali, Preferenze cookie
+            </a>
+        </div>
+    </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".fade-up");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            }
+            const elements = document.querySelectorAll(".fade-up");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.2 });
+            elements.forEach(el => observer.observe(el));
         });
-    }, { threshold: 0.2 });
-
-    elements.forEach(el => observer.observe(el));
-});
-
     </script>
     <script src="./assets/js/mobile-menu.js"></script>
-
 </body>
+
 </html>
