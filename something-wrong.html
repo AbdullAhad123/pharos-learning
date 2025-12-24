@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Something went wrong - Pharos</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/font.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .btn-primary {
+      background: linear-gradient(135deg, #0066FF 0%, #7C3AED 100%);
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0, 102, 255, 0.3);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-slate-900">
+
+<section class="min-h-screen flex">
+
+  <!-- LEFT IMAGE SIDE -->
+  <div class="hidden md:flex w-3/4 relative">
+    <img
+      src="assets/img/login-bg.jpg"
+      alt="Error Background"
+      class="absolute inset-0 w-full h-full object-cover grayscale"
+    >
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 flex items-end p-16 text-white">
+      <div>
+        <h1 class="text-5xl font-bold mb-4">Well… this is awkward.</h1>
+        <p class="text-lg text-white/80 max-w-md">
+          Something didn’t go as planned. No data was harmed. Your patience, maybe.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT MESSAGE SIDE -->
+  <div class="w-full md:w-1/4 flex items-center justify-center px-8">
+    <div class="w-full max-w-sm text-center">
+
+      <h2 class="text-3xl font-bold mb-4">Request failed</h2>
+      <p class="text-slate-600 mb-10">
+        The link may be invalid, expired, or already used. Try again or head back safely.
+      </p>
+
+      <div class="space-y-4">
+        <a
+          href="forgot-password.html"
+          class="btn-primary block w-full text-white py-3 rounded-lg font-semibold"
+        >
+          Try again
+        </a>
+
+        <a
+          href="login.html"
+          class="block w-full py-3 rounded-lg font-semibold border border-slate-300 hover:bg-slate-100 transition"
+        >
+          Back to login
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
